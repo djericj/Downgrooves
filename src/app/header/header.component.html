@@ -1,0 +1,99 @@
+<header>
+  <div class="logo-box logo">
+
+    <img src="../../assets/images/logo_w_title.png" class="img-responsive hidden-sm hidden-xs" />
+
+    <img src="../../assets/images/logo_w_title_only.png" class="img-responsive hidden-lg hidden-md" />
+  </div>
+
+  <a class="elemadded responsive-link" href="#">Menu</a>
+
+  <div class="menu-box" ng-app>
+    <ul class="menu" ng-click="$event.preventDefault();">
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['']">
+          <i class="fa fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['about']">
+          <i class="fa fa-magic"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['music']">
+          <i class="fa-music fa"></i>
+          <span>Music</span>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['mixes']">
+          <i class="fa fa-headphones"></i>
+          <span>DJ</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['classics']">
+          <i class="fa fa-history"></i>
+          <span>Classics</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['shop']">
+          <i class="fa fa-shopping-bag"></i>
+          <span>Shop</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['contact']">
+          <i class="fa fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- Social icon -->
+  <div class="social-box">
+    <ul class="social-icons">
+      <li>
+        <a href="https://www.facebook.com/Downgrooves/" class="facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/Downgrooves/" class="twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.soundcloud.com/Downgrooves/" class="soundcloud">
+          <i class="fa fa-soundcloud"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/channel/UCBdt53d5ez75y32pzkqbTMw?view_as=subscriber" class="youtube">
+          <i class="fa fa-youtube"></i>
+        </a>
+      </li>
+    </ul>
+    <p class="copyright">&#169; 2018 Downgrooves, All Rights Reserved</p>
+  </div>
+
+  <div *ngIf="track">
+    <div class="player-image-region" [ngStyle]="{ 'background-image': 'url(' + track.thumbnail + ')'}">
+      <div class="song-info">
+        <div class="song-info__text">
+          <div class="song-info__title">{{track.artist}}</div>
+          <div>{{track.name}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

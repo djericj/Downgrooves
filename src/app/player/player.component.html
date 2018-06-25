@@ -1,0 +1,51 @@
+<div class="player-region">
+
+  <div>
+
+    <div class="player-control">
+
+      <div class="player-control-bottom">
+
+        <div class="controlling-options">
+          <div class="btn" (click)="handleBackward()">
+            <i class="fa fa-step-backward"></i>
+          </div>
+          <div class="btn" (click)="handlePausePlay()">
+            <div *ngIf="paused;then pause else play;"></div>
+            <ng-template #play><i class="fa fa-pause"></i></ng-template>
+            <ng-template #pause><i class="fa fa-play"></i></ng-template>
+          </div>
+          <div class="btn" (click)="handleForward()">
+            <i class="fa fa-step-forward"></i>
+          </div>
+
+          <div class="btn btn-noclick">
+            <span><span class="badge">{{ volume * 100 | number:0 }}%</span></span>
+          </div>
+          <div class="btn" ng-click="handleVolumeDown(volume - 0.1)">
+            <span><i class="fa fa-volume-down"></i></span>
+          </div>
+          <div class="btn" ng-click="handleVolumeUp(volume + 0.1)">
+            <span><i class="fa fa-volume-up"></i></span>
+          </div>
+        </div>
+
+        <div class="song-duration">
+          <span class="song-duration-beg"><i class="fa fa-clock-o"></i>: <span class="badge">{{ elapsed }}</span></span>
+          <div class="progress" ng-click="mediaPlayer.seek(duration * generalPlaylist.seekPercentage($event))">
+            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="percentElapsed + '%'"></div>
+          </div>
+          <span class="song-duration-end">{{ length }}</span>
+        </div>
+        <div class="btn btn-noclick">
+          <span><span class="badge">{{ title }}</span></span>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

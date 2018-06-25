@@ -1,0 +1,63 @@
+<div *ngIf="mix">
+  <div class="row" style="padding-bottom: 30px;">
+    <div class="col-md-4">
+
+      <img src="../../../assets/images/mixes/{{ mix.attachment }}" class="img-responsive img-thumbnail m-b-lg" alt="{{ mix.name }}">
+
+      <a href="../../../assets/mp3/{{ mix.Mp3File }}" class="m-b-lg" target="_new">Listen</a>
+      <br/>
+      <br/>
+      <p>{{ mix.ShortDescription }}</p>
+      <h6>{{ mix.CreateDate }}</h6>
+    </div>
+    <div class="col-md-8">
+      <div class="hover-text">
+        <h1>
+          <strong>{{mix.Name}}</strong>
+        </h1>
+
+        <h4 class="m-b-lg">
+          <a href="#">{{mix.artist}}</a>
+        </h4>
+
+
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <table class="table">
+            <ng-container *ngFor="let t of mix.Tracks">
+              <tr *ngIf="t.title">
+                <td class="hover-text" style="width: 35px;">
+                  <a href="javascript:void();" (click)="_audioService.setAudio(t.previewUrl)">
+                    <!-- <i class="fa fa-play" style="font-size: 13px;"></i>  -->
+                    {{ t.Number }}
+                  </a>
+                </td>
+                <td class="hover-text">
+                  <strong>{{ t.title }} </strong>
+                  <span *ngIf="t.Remix">({{ t.Remix }})</span>
+                  <br/>
+                  <p class="small hover-text">{{ t.artist }}</p>
+                </td>
+                <td>
+                  <span class="pull-right">
+                    {{ t.label }}
+                  </span>
+                </td>
+              </tr>
+            </ng-container>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <a [routerLink]="['/mixes']">&lt;--back</a>
+  </div>
+</div>

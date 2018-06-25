@@ -1,0 +1,57 @@
+<div *ngIf="album">
+  <div class="row" style="padding-bottom: 30px;">
+    <div class="col-md-4">
+
+      <img src="{{ album.artworkUrl100 | enlargeImage }}" class="img-responsive img-thumbnail m-b-lg" alt="{{ album.name }}">
+
+      <a href="{{ album.collectionViewUrl }}" target="_new">Buy on iTunes</a>
+    </div>
+    <div class="col-md-8">
+      <div class="hover-text">
+        <h1>
+          <strong>{{album.collectionName}}</strong>
+        </h1>
+
+        <h4 class="m-b-lg">
+          <a href="{{album.artistViewUrl}}">{{album.artistName}}</a>
+        </h4>
+        <h6>{{ formattedReleaseDate }}</h6>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <table class="table">
+            <ng-container *ngFor="let t of tracks">
+              <tr *ngIf="t.trackName">
+                <td class="hover-text" style="width: 35px;">
+                  <a href="javascript:void();" (click)="_audioService.setAudio(t.previewUrl)">
+                    <!-- <i class="fa fa-play" style="font-size: 13px;"></i>  -->
+                    {{ t.trackNumber }}
+                  </a>
+                </td>
+                <td class="hover-text">
+                  <strong>{{ t.trackCensoredName }}</strong>
+                  <br/>
+                  <p class="small hover-text">{{ t.artistName }}</p>
+                </td>
+                <td>
+                  <span class="pull-right">
+                    {{ t.trackTimeMillis | formatTrackTime }}
+                  </span>
+                </td>
+              </tr>
+            </ng-container>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <a [routerLink]="['/music']">&lt;--back</a>
+  </div>
+</div>

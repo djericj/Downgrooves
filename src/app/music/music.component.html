@@ -1,0 +1,46 @@
+<div class="section-title">
+  <h2>Original Tracks</h2>
+  <p>Music created by Downgrooves</p>
+  <hr/>
+</div>
+<div class="row">
+  <div class="portfolio-items isotope">
+
+    <div class="col-sm-6 col-md-3 col-lg-3 web isotope-item" *ngFor="let track of originals">
+      <div class="portfolio-item">
+        <div class="hover-bg">
+          <a [routerLink]="[track.collectionId, track.trackCensoredName | urlFormat]">
+            <div class="hover-text">
+              <h4>{{ track.artistName }}
+                <br/> {{ track.trackCensoredName }}</h4>
+            </div>
+            <img src="{{ track.artworkUrl100 | enlargeImage }}" class="img-responsive" alt="{{ track.trackCensoredName }}">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <br/>
+    <br/>
+    <div class="clearfix"></div>
+    <div class="col-xs-12">
+      <h2>Remixes</h2>
+      <p>Music created by others and remixed by Downgrooves</p>
+      <hr/>
+    </div>
+    <div class="col-sm-6 col-md-3 col-lg-3 web isotope-item" *ngFor="let track of remixes">
+      <div class="portfolio-item">
+        <div class="hover-bg">
+          <a [routerLink]="[track.collectionId, track.trackCensoredName | urlFormat]">
+            <div class="hover-text">
+              <h4>{{ track.artistName }}
+                <br/> {{ track.trackCensoredName }}</h4>
+            </div>
+            <img src="{{ track.artworkUrl100 | enlargeImage }}" class="img-responsive" alt="{{ track.trackCensoredName }}">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
