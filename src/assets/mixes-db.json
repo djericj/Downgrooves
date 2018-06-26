@@ -390,6 +390,7 @@
     "attachment": "hoojchoons1.png",
     "CreateDate": "2001-07-02T00:00:00",
     "GenreId": "3",
+    "Category": "Classics",
     "TotalPlays": "9.600000000000000e+001",
     "LastPlay": "2005-12-29T03:29:16.253",
     "Tracks": [
@@ -3442,15 +3443,7 @@
       }
     ]
   },
-  {
-    "MixId": "31",
-    "Name": "Vocal 07",
-    "artist": "Eric J",
-    "Mp3File": "eric_j_-_vocal_07.mp3",
-    "GenreId": "3",
-    "TotalPlays": "0.000000000000000e+000",
-    "LastPlay": "2018-06-24T00:00:00"
-  },
+
   {
     "MixId": "32",
     "Name": "Vocal 08",

@@ -24,7 +24,7 @@ export class MixesComponent implements OnInit {
 
   getMixes() {
     this._route.params.subscribe(params => {
-      this.category = params["category"];
+      let category: string = params["category"];
       this._mixesService.getMixes().subscribe(
         // the first argument is a function which runs on success
         data => {
@@ -36,10 +36,11 @@ export class MixesComponent implements OnInit {
               return 0;
             }
           );
-          if (this.category) {
+          if (category) {
             this.mixes = this.mixes.filter(x => {
-              return x.Category == this.category;
+              return x.Category.toUpperCase() == category.toUpperCase();
             });
+            this.category = category;
           }
         }
       );
