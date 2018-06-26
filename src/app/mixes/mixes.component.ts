@@ -28,17 +28,18 @@ export class MixesComponent implements OnInit {
         // the first argument is a function which runs on success
         data => {
           this.mixes = data;
-          this.mixes = this.mixes
-            .filter(x => {
+          this.mixes = this.mixes.sort(
+            (l, r): number => {
+              if (l.CreateDate > r.CreateDate) return -1;
+              if (l.CreateDate < r.CreateDate) return 1;
+              return 0;
+            }
+          );
+          if (category) {
+            this.mixes = this.mixes.filter(x => {
               return x.Category == category;
-            })
-            .sort(
-              (l, r): number => {
-                if (l.CreateDate > r.CreateDate) return -1;
-                if (l.CreateDate < r.CreateDate) return 1;
-                return 0;
-              }
-            );
+            });
+          }
         }
       );
     });

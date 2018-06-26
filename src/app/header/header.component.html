@@ -29,18 +29,33 @@
         </a>
       </li>
       <li [routerLinkActive]="['active']">
-        <a [routerLink]="['mixes']">
+        <a [routerLink]="['/mixes']">
           <i class="fa fa-headphones"></i>
-          <span>DJ</span>
+          <span>DJ Mixes</span>
         </a>
+        <ul class="menu" style="padding-left: 34px;" ng-click="$event.preventDefault();">
+          <li [routerLinkActive]="['active']">
+            <a [routerLink]="['/mixes/progressive']">
+              <!-- <i class="fa fa-plane"></i> -->
+              <span>Progressive House</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/mixes/vocal']">
+              <!-- <i class="fa fa-microphone"></i> -->
+              <span>Vocal</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/mixes/classics']">
+              <!-- <i class="fa fa-history"></i> -->
+              <span>Classics</span>
+            </a>
+          </li>
+
+        </ul>
       </li>
 
-      <li>
-        <a [routerLink]="['classics']">
-          <i class="fa fa-history"></i>
-          <span>Classics</span>
-        </a>
-      </li>
 
       <li>
         <a [routerLink]="['shop']">

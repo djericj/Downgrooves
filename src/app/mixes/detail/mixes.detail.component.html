@@ -1,26 +1,42 @@
 <div *ngIf="mix">
   <div class="row" style="padding-bottom: 30px;">
-    <div class="col-md-4">
+    <div class="col-md-4 text-right">
 
       <img src="../../../assets/images/mixes/{{ mix.attachment }}" class="img-responsive img-thumbnail m-b-lg" alt="{{ mix.name }}">
+      <h4 class="m-b-lg">
+        <span class="h3">mixed by </span>
+        <a [routerLink]="['/about']">{{mix.artist}}</a>
+      </h4>
+      <a href="../../../assets/mp3/{{ mix.Mp3File }}" class="m-b-lg" target="_new">Download</a>
 
-      <a href="../../../assets/mp3/{{ mix.Mp3File }}" class="m-b-lg" target="_new">Listen</a>
       <br/>
       <br/>
       <p>{{ mix.ShortDescription }}</p>
-      <h6>{{ mix.CreateDate }}</h6>
+      <h3>{{ mix.CreateDate }}</h3>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div class="row">
+        <div class="col-xs-12">
+          <a [routerLink]="['/mixes']">&lt;--back</a>
+        </div>
+      </div>
     </div>
     <div class="col-md-8">
-      <div class="hover-text">
-        <h1>
-          <strong>{{mix.Name}}</strong>
-        </h1>
+      <div class="row">
+        <div class="col-md-9 col-xs-12">
+          <div class="hover-text">
+            <h1 class="pull-left">
+              <strong>{{mix.Name}}</strong>
+            </h1>
 
-        <h4 class="m-b-lg">
-          <a href="#">{{mix.artist}}</a>
-        </h4>
-
-
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <a href="../../../assets/mp3/{{ mix.Mp3File }}" class="pull-right" target="_new">Listen</a>
+        </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -53,11 +69,5 @@
 
     <br/>
     <br/>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <a [routerLink]="['/mixes']">&lt;--back</a>
   </div>
 </div>

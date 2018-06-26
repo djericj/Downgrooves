@@ -1,10 +1,20 @@
 <div *ngIf="album">
   <div class="row" style="padding-bottom: 30px;">
-    <div class="col-md-4">
+    <div class="col-md-4 text-right">
 
       <img src="{{ album.artworkUrl100 | enlargeImage }}" class="img-responsive img-thumbnail m-b-lg" alt="{{ album.name }}">
 
-      <a href="{{ album.collectionViewUrl }}" target="_new">Buy on iTunes</a>
+      <h4 class="m-b-lg">
+        <span class="h3">by </span>
+        <a href="{{album.artistViewUrl}}">{{album.artistName}}</a>
+      </h4>
+      <p>
+        <a href="{{ album.collectionViewUrl }}" target="_new">Buy on iTunes</a>
+      </p>
+
+      <h3>{{ formattedReleaseDate }}</h3>
+
+
     </div>
     <div class="col-md-8">
       <div class="hover-text">
@@ -12,10 +22,7 @@
           <strong>{{album.collectionName}}</strong>
         </h1>
 
-        <h4 class="m-b-lg">
-          <a href="{{album.artistViewUrl}}">{{album.artistName}}</a>
-        </h4>
-        <h6>{{ formattedReleaseDate }}</h6>
+
       </div>
       <div class="row">
         <div class="col-xs-12">

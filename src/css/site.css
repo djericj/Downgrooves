@@ -90,6 +90,7 @@ img {
 
 h1,
 h2,
+.h3,
 h3,
 h4,
 h5,
@@ -307,6 +308,10 @@ a.elemadded {
 
 .m-b-lg {
   margin-bottom: 40px;
+}
+
+.p-l-md {
+  padding-left: 20px;
 }
 
 .img-thumbnail {
