@@ -16,9 +16,13 @@ export class MixesService {
       });
   }
 
-  getMix(id): Observable<IMix> {
+  getMix(name): Observable<IMix> {
     return this.getMixes().map(data => {
-      return data.find(x => x.MixId == id);
+      console.log(name.replace(/-/gi, " "));
+      return data.find(
+        (x: IMix) =>
+          x.Name.toUpperCase() == name.toUpperCase().replace(/-/gi, " ")
+      );
     });
   }
 

@@ -52,6 +52,7 @@ export interface IMix {
   attachment: string;
   CreateDate: string;
   GenreId: string;
+  Category: string;
   TotalPlays: string;
   LastPlay: string;
   Tracks: Track[] | Track;

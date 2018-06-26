@@ -21,8 +21,8 @@ export class MixesDetailComponent implements OnInit {
 
   getDetail() {
     this._route.params.subscribe(params => {
-      let mixId = params["id"];
-      this._mixesService.getMix(mixId).subscribe(data => {
+      let name = params["name"];
+      this._mixesService.getMix(name).subscribe(data => {
         this.mix = data;
         this.mix.CreateDate = moment_(this.mix.CreateDate).format("MMM YYYY");
         console.log(this.mix);
