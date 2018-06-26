@@ -11,6 +11,7 @@ import { IMix } from "../services/interfaces";
 })
 export class MixesComponent implements OnInit {
   public mixes: IMix[];
+  public category: string;
   loading: false;
   constructor(
     private _route: ActivatedRoute,
@@ -23,7 +24,7 @@ export class MixesComponent implements OnInit {
 
   getMixes() {
     this._route.params.subscribe(params => {
-      let category = params["category"];
+      this.category = params["category"];
       this._mixesService.getMixes().subscribe(
         // the first argument is a function which runs on success
         data => {
@@ -35,9 +36,9 @@ export class MixesComponent implements OnInit {
               return 0;
             }
           );
-          if (category) {
+          if (this.category) {
             this.mixes = this.mixes.filter(x => {
-              return x.Category == category;
+              return x.Category == this.category;
             });
           }
         }

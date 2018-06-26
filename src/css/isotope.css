@@ -277,6 +277,8 @@ ol.type li a {
   color: #54d0dd;
   padding: 12px 24px;
   text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
 }
 ol.type li a.active {
   background: #54d0dd;
