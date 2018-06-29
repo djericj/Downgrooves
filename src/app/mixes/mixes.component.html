@@ -1,5 +1,7 @@
 <div class="text-center">
-  <p class="lead" *ngIf="loading">Loading...</p>
+  <p class="lead" *ngIf="loading">
+    <app-loading></app-loading>
+  </p>
 </div>
 <div class="section-title" *ngIf="!loading">
   <h2>Mixes</h2>
@@ -26,15 +28,6 @@
     </li>
   </ul>
 </div>
-
-<script>
-  $('a').on('click', function () {
-    alert('here');
-    return false;
-  }
-
-  );
-</script>
 
 <div class="row">
   <div class="col-sm-6 col-md-3 col-lg-3" *ngFor="let mix of mixes">

@@ -21,6 +21,7 @@ import { EnlargeImagePipe } from "./pipes/enlarge-image.pipe";
 import { UrlFormatPipe } from "./pipes/url-format.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
 import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
     AboutComponent,
     ContactComponent,
     ShopComponent,
-    MixesDetailComponent
+    MixesDetailComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

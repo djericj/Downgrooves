@@ -14,7 +14,7 @@ import { BaseComponent } from "../base/base.component";
 export class MixesComponent extends BaseComponent implements OnInit {
   public mixes: IMix[];
   public category: string;
-  loading: false;
+  public loading: boolean;
   constructor(
     private _route: ActivatedRoute,
     private _mixesService: MixesService,
@@ -24,7 +24,9 @@ export class MixesComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loading = true;
     this.getMixes();
+    this.loading = false;
   }
 
   getMixes() {
