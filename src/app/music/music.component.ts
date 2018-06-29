@@ -3,23 +3,31 @@ import { HttpClient } from "@angular/common/http";
 import { ITunesTrack } from "../services/interfaces";
 import { ITunesService } from "../services/itunes.service";
 import * as _ from "lodash";
+import { BaseComponent } from "../base/base.component";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-music",
   templateUrl: "./music.component.html",
   styleUrls: ["./music.component.css"]
 })
-export class MusicComponent implements OnInit {
+export class MusicComponent extends BaseComponent implements OnInit {
   public tracks: ITunesTrack[] = [];
   public originals: ITunesTrack[] = [];
   public remixes: ITunesTrack[] = [];
   constructor(
     private http: HttpClient,
-    private _iTunesService: ITunesService
-  ) {}
+    private _iTunesService: ITunesService,
+    private _titleService: Title
+  ) {
+    super();
+  }
 
   ngOnInit() {
     this.getITunesData();
+    this._titleService.setTitle(
+      "Original tracks and remixes | " + this._siteTitle
+    );
   }
 
   getITunesData(): void {

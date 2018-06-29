@@ -675,7 +675,7 @@
         "Number": "9",
         "artist": "Killahurtz",
         "title": "West on 27th Street",
-        "Remix": "a tribe called 'khx' mix"
+        "Remix": "a tribe called 'khz' mix"
       },
       {
         "TrackId": "167",
@@ -3587,7 +3587,7 @@
   },
   {
     "MixId": "33",
-    "Name": "The Light and the Dark - Disc 1",
+    "Name": "The Light and the Dark Disc 1",
     "artist": "Mario & Eric J",
     "length": "1:12:02",
     "Mp3File": "mario_and_eric_j_-_the_light_and_the_dark_(disc_one).mp3",
@@ -3710,7 +3710,7 @@
   },
   {
     "MixId": "34",
-    "Name": "The Light and the Dark - Disc 2",
+    "Name": "The Light and the Dark Disc 2",
     "artist": "Mario & Eric J",
     "length": "1:06:57",
     "Mp3File": "mario_and_eric_j_-_the_light_and_the_dark_(disc_two).mp3",

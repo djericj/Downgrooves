@@ -1,6 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ITunesService } from "./services/itunes.service";
-import { Observable } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -8,7 +6,7 @@ import { Observable } from "rxjs";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  constructor(private _iTunesService: ITunesService) {}
+  constructor() {}
 
   ngOnInit() {}
 }

@@ -1,4 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserService } from "./services/browser.service";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app.routes";
 import { AppComponent } from "./app.component";
@@ -51,7 +52,7 @@ import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
     //   onSameUrlNavigation: "reload"
     // })
   ],
-  providers: [ITunesService, AudioService, MixesService],
+  providers: [ITunesService, AudioService, MixesService, BrowserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
