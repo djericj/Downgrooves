@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+<div class="row">
+  <div class="portfolio-items isotope wrapper">
+    <div class="web isotope-item item" *ngFor="let track of tracks">
+      <div class="portfolio-item">
+        <div class="hover-bg">
+          <a [routerLink]="[track.collectionId, track.trackCensoredName | urlFormat]">
+            <div class="hover-text">
+              <h4>{{ track.artistName }}
+                <br/> {{ track.trackCensoredName }}</h4>
+            </div>
+            <img src="{{ track.artworkUrl100 | enlargeImage }}" class="img-responsive" alt="{{ track.trackCensoredName }}">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
