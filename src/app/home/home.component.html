@@ -1,6 +1,13 @@
-<div class="row">
+<!-- <div class="row">
   <div class="portfolio-items isotope wrapper">
-    <div class="web isotope-item item" *ngFor="let track of tracks">
+    <section class="info1">
+      <h2>The Title</h2>
+      <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
+      <a href="#" class="info-link">Learn more...</a>
+    </section>
+
+
+    <div class="web isotope-item item item{{i}}" *ngFor="let track of tracks; index as i" [attr.data-index]="i">
       <div class="portfolio-item">
         <div class="hover-bg">
           <a [routerLink]="[track.collectionId, track.trackCensoredName | urlFormat]">
@@ -8,10 +15,67 @@
               <h4>{{ track.artistName }}
                 <br/> {{ track.trackCensoredName }}</h4>
             </div>
-            <img src="{{ track.artworkUrl100 | enlargeImage }}" class="img-responsive" alt="{{ track.trackCensoredName }}">
+            <img src="{{ track.artworkUrl100 | enlargeImage }}" class="item-image" alt="{{ track.trackCensoredName }}">
           </a>
         </div>
       </div>
     </div>
+    <section class="info2">
+      <h2>The Title 2</h2>
+      <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
+      <a href="#" class="info-link">Learn more...</a>
+    </section>
+
   </div>
-</div>
+</div> -->
+
+<main class="main">
+  <section class="info1">
+    <h2>The Title</h2>
+    <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
+    <a href="#" class="info-link">Learn more...</a>
+  </section>
+  <figure class="figure{{i}}" *ngFor="let track of tracks; index as i" [attr.data-index]="i">
+    <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
+      <!-- <div class="hover-text">
+        <h4>{{ track.artistName }}
+          <br/> {{ track.trackCensoredName }}</h4>
+      </div> -->
+      <img class="figure-img" src="{{ track.artworkUrl100 | enlargeImage }}" alt="{{ track.trackCensoredName }}">
+    </a>
+  </figure>
+  <section class="info2">
+    <h2>The Title 2</h2>
+    <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
+    <a href="#" class="info-link">Learn more...</a>
+  </section>
+  <!-- <figure class="figure1">
+    <img class="figure-img" src="http://placekitten.com/g/350/200" alt="a kitten">
+  </figure>
+  <figure class="figure2">
+    <img class="figure-img" src="http://placekitten.com/g/300/200" alt="a kitten">
+  </figure>
+  <figure class="figure3">
+    <img class="figure-img" src="http://placekitten.com/g/500/500" alt="a kitten">
+  </figure>
+  <figure class="figure4">
+    <img class="figure-img" src="http://placekitten.com/g/460/460" alt="a kitten">
+  </figure>
+  <figure class="figure5">
+    <img class="figure-img" src="http://placekitten.com/g/210/300" alt="a kitten">
+  </figure>
+  <figure class="figure6">
+    <img class="figure-img" src="http://placekitten.com/g/330/250" alt="a kitten">
+  </figure>
+  <section class="info2">
+    <h2>The Title</h2>
+    <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
+    <a href="#" class="info-link">Learn more...</a>
+  </section>
+  <figure class="figure7">
+    <img class="figure-img" src="http://placekitten.com/g/300/150" alt="a kitten">
+  </figure>
+  <figure class="figure7">
+    <img class="figure-img" src="http://placekitten.com/g/370/190" alt="a kitten">
+  </figure> -->
+</main>

@@ -37,7 +37,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
             return 0;
           }
         )
-        .slice(0, 5);
+        .slice(0, 7);
     });
   }
 }
