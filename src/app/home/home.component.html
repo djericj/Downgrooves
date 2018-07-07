@@ -1,36 +1,6 @@
-<!-- <div class="row">
-  <div class="portfolio-items isotope wrapper">
-    <section class="info1">
-      <h2>The Title</h2>
-      <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
-      <a href="#" class="info-link">Learn more...</a>
-    </section>
-
-
-    <div class="web isotope-item item item{{i}}" *ngFor="let track of tracks; index as i" [attr.data-index]="i">
-      <div class="portfolio-item">
-        <div class="hover-bg">
-          <a [routerLink]="[track.collectionId, track.trackCensoredName | urlFormat]">
-            <div class="hover-text">
-              <h4>{{ track.artistName }}
-                <br/> {{ track.trackCensoredName }}</h4>
-            </div>
-            <img src="{{ track.artworkUrl100 | enlargeImage }}" class="item-image" alt="{{ track.trackCensoredName }}">
-          </a>
-        </div>
-      </div>
-    </div>
-    <section class="info2">
-      <h2>The Title 2</h2>
-      <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
-      <a href="#" class="info-link">Learn more...</a>
-    </section>
-
-  </div>
-</div> -->
-
 <main class="main">
   <section class="info1">
+
     <h2>The Title</h2>
     <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
     <a href="#" class="info-link">Learn more...</a>
@@ -45,9 +15,11 @@
     </a>
   </figure>
   <section class="info2">
-    <h2>The Title 2</h2>
-    <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
-    <a href="#" class="info-link">Learn more...</a>
+    <h2>Who we are</h2>
+    <p>
+      <strong>Downgrooves</strong> is a collaboration music project of recording artists
+      <strong>Mario &amp; Eric J</strong> based out of Dallas, Texas.</p>
+    <a [routerLink]="['/about']" class="info-link">about us...</a>
   </section>
   <!-- <figure class="figure1">
     <img class="figure-img" src="http://placekitten.com/g/350/200" alt="a kitten">

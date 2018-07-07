@@ -334,7 +334,7 @@ ol.type li a:hover {
   /* font-weight: 700; */
 }
 
-.portfolio-item {
+/* .portfolio-item {
   margin: 15px 0;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
@@ -348,7 +348,7 @@ ol.type li a:hover {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
-}
+} */
 .portfolio-item .hover-bg {
   /* height: 195px; */
   overflow: hidden;
@@ -400,9 +400,9 @@ ol.type li a:hover {
 .hover-bg:hover .hover-text {
   opacity: 1;
 }
-#portfolio i.fa {
+/* #portfolio i.fa {
   padding: 5px;
-}
+} */
 /* Contact Section */
 #contact {
   padding: 120px 0 60px 0;
