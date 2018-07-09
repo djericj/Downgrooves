@@ -74,6 +74,24 @@ export enum Artist {
   MarioEricJ = "Mario & Eric J"
 }
 
+export interface FacebookSearchResponse {
+  posts: FacebookData;
+  id: string;
+}
+
+export interface FacebookData {
+  data: FacebookPost[];
+  paging: any;
+}
+
+export interface FacebookPost {
+  created_time: string;
+  id: number;
+  message: string;
+  permalink_url: string;
+  story: string;
+}
+
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export namespace Convert {

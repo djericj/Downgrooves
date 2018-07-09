@@ -1,8 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { BaseComponent } from "../base/base.component";
 import { Title } from "@angular/platform-browser";
-import { ITunesTrack } from "../services/interfaces";
+import {
+  ITunesTrack,
+  FacebookPost,
+  FacebookData
+} from "../services/interfaces";
 import { ITunesService } from "../services/itunes.service";
+import { FacebookService } from "../services/facebook.service";
 import * as _ from "lodash";
 
 @Component({
@@ -12,16 +17,26 @@ import * as _ from "lodash";
 })
 export class HomeComponent extends BaseComponent implements OnInit {
   public tracks: ITunesTrack[] = [];
+  public posts: FacebookPost[];
   constructor(
     private _iTunesService: ITunesService,
+    private _facebookService: FacebookService,
     private _titleService: Title
   ) {
     super();
   }
 
   ngOnInit() {
+    this.getPosts();
     this.getITunesData();
     this._titleService.setTitle(this._siteTitle);
+  }
+
+  getPosts(): void {
+    this._facebookService.getPosts().subscribe(d => {
+      console.log(d.posts.data);
+      this.posts = d.posts.data;
+    });
   }
 
   getITunesData(): void {

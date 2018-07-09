@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app.routes";
 import { AppComponent } from "./app.component";
 import { AudioService } from "./services/audio.service";
 import { MixesService } from "./services/mixes.service";
+import { FacebookService } from "./services/facebook.service";
 import { ITunesService } from "./services/itunes.service";
 import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
@@ -21,7 +22,7 @@ import { EnlargeImagePipe } from "./pipes/enlarge-image.pipe";
 import { UrlFormatPipe } from "./pipes/url-format.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
 import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
-import { LoadingComponent } from './loading/loading.component';
+import { LoadingComponent } from "./loading/loading.component";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,13 @@ import { LoadingComponent } from './loading/loading.component';
     //   onSameUrlNavigation: "reload"
     // })
   ],
-  providers: [ITunesService, AudioService, MixesService, BrowserService],
+  providers: [
+    ITunesService,
+    AudioService,
+    MixesService,
+    BrowserService,
+    FacebookService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
