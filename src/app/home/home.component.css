@@ -2,6 +2,26 @@ a {
   background: none;
   padding: 0px;
 }
+a:hover {
+  color: #fff;
+}
+figure > section {
+  height: 100%;
+}
+i {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  padding: 30% 0 0 0;
+}
+
+i.fa:hover {
+  opacity: 0;
+  transition: all 0.5s;
+}
 
 /* grid styles ------------------------------------ */
 @media (min-width: 600px) {
@@ -87,15 +107,54 @@ header {
 }
 
 .info1,
-.info2 {
+.info2,
+.info3 {
   padding: 40px;
   background-color: #333;
   color: white;
+  overflow: hidden;
 }
 
 .info2 {
   grid-column: 4 / span 2;
   grid-row: 3;
+}
+
+.info3 {
+  grid-column: 4 / span 2;
+  grid-row: 4 / span 2;
+}
+
+.itunes {
+  background-color: #615655;
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.itunes i {
+  top: 35%;
+  transform: translateY(-35%);
+}
+
+.beatport {
+  background-color: #000000;
+  grid-column: 1;
+  grid-row: 5;
+}
+
+.beatport img {
+  margin: 0 auto;
+  max-width: 50%;
+  position: relative;
+  top: 40%;
+  transform: translateY(-35%);
+}
+
+.fa-beatport {
+  background-image: url("../../assets/images/Beatport_Logo_Mark.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
 }
 
 h2 {
