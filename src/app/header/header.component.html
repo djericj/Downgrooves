@@ -29,9 +29,15 @@
         </a>
       </li>
       <li [routerLinkActive]="['active']">
+        <a [routerLink]="['remixes']">
+          <i class="fa-play fa"></i>
+          <span>Remixes</span>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
         <a [routerLink]="['/mixes']">
           <i class="fa fa-headphones"></i>
-          <span>DJ Mixes</span>
+          <span>DJ Sets</span>
         </a>
         <ul class="menu" style="padding-left: 34px;" ng-click="$event.preventDefault();">
           <li [routerLinkActive]="['active']">

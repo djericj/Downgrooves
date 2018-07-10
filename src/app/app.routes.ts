@@ -5,6 +5,7 @@ import { HomeComponent } from "./home/home.component";
 import { MixesComponent } from "./mixes/mixes.component";
 import { MusicComponent } from "./music/music.component";
 import { MusicDetailComponent } from "./music/detail/music.detail.component";
+import { RemixesComponent } from "./remixes/remixes.component";
 import { ShopComponent } from "./shop/shop.component";
 import { RouterModule, Routes } from "@angular/router";
 import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "mix/:name", component: MixesDetailComponent },
   { path: "music", component: MusicComponent },
   { path: "music/:id/:name", component: MusicDetailComponent },
+  { path: "remixes", component: RemixesComponent },
   { path: "classics", component: MixesComponent },
   { path: "shop", component: ShopComponent },
   { path: "contact", component: ContactComponent },

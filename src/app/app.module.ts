@@ -24,6 +24,7 @@ import { RemoveUrlsPipe } from "./pipes/remove-urls.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
 import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
 import { LoadingComponent } from "./loading/loading.component";
+import { RemixesComponent } from './remixes/remixes.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { LoadingComponent } from "./loading/loading.component";
     ContactComponent,
     ShopComponent,
     MixesDetailComponent,
-    LoadingComponent
+    LoadingComponent,
+    RemixesComponent
   ],
   imports: [
     BrowserModule,

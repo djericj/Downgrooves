@@ -7,11 +7,11 @@ import { BaseComponent } from "../base/base.component";
 import { Title } from "@angular/platform-browser";
 
 @Component({
-  selector: "app-music",
-  templateUrl: "./music.component.html",
-  styleUrls: ["./music.component.css"]
+  selector: "app-remixes",
+  templateUrl: "./remixes.component.html",
+  styleUrls: ["./remixes.component.css"]
 })
-export class MusicComponent extends BaseComponent implements OnInit {
+export class RemixesComponent extends BaseComponent implements OnInit {
   public tracks: ITunesTrack[] = [];
   public originals: ITunesTrack[] = [];
   public remixes: ITunesTrack[] = [];
@@ -25,7 +25,7 @@ export class MusicComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.getITunesData();
-    this._titleService.setTitle("Original music | " + this._siteTitle);
+    this._titleService.setTitle("Remixes | " + this._siteTitle);
   }
 
   getITunesData(): void {

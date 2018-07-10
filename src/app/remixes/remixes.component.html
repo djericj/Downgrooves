@@ -1,0 +1,43 @@
+<main class="main">
+  <section class="info1">
+    <h2>Remixes</h2>
+    <p>Music created by others and remixed by Downgrooves</p>
+  </section>
+  <section class="info2">
+
+  </section>
+  <section class="info3">
+
+  </section>
+  <!-- <figure class="itunes portfolio-item">
+    <section class="hover-bg">
+      <a href="https://itunes.apple.com/us/artist/downgrooves/570186506" target="_new">
+        <div class="hover-text">
+          <h4>find us on itunes</h4>
+        </div>
+        <i class="fa fa-apple fa-5x"></i>
+      </a>
+    </section>
+  </figure>
+  <figure class="beatport portfolio-item">
+    <section class="hover-bg">
+      <a href="https://www.beatport.com/artist/downgrooves/293260" target="_new">
+        <div class="hover-text">
+          <h4>find us on beatport</h4>
+        </div>
+        <i class="fa fa-beatport fa-5x"></i>
+      </a>
+    </section>
+  </figure> -->
+  <figure class="figure{{i}}" *ngFor="let track of remixes; index as i" [attr.data-index]="i">
+    <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
+      <!-- <div class="hover-text">
+        <h4>{{ track.artistName }}
+          <br/> {{ track.trackCensoredName }}</h4>
+      </div> -->
+      <img class="figure-img" src="{{ track.artworkUrl100 | enlargeImage }}" alt="{{ track.trackCensoredName }}">
+    </a>
+  </figure>
+
+
+</main>
