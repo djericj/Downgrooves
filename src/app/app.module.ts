@@ -20,6 +20,7 @@ import { PlayerComponent } from "./player/player.component";
 import { ShopComponent } from "./shop/shop.component";
 import { EnlargeImagePipe } from "./pipes/enlarge-image.pipe";
 import { UrlFormatPipe } from "./pipes/url-format.pipe";
+import { RemoveUrlsPipe } from "./pipes/remove-urls.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
 import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
 import { LoadingComponent } from "./loading/loading.component";
@@ -39,6 +40,7 @@ import { LoadingComponent } from "./loading/loading.component";
     EnlargeImagePipe,
     UrlFormatPipe,
     FormatTrackTimePipe,
+    RemoveUrlsPipe,
     AboutComponent,
     ContactComponent,
     ShopComponent,

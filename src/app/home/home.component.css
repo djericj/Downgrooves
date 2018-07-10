@@ -1,13 +1,19 @@
 a {
   background: none;
   padding: 0px;
+  text-decoration: none;
 }
-a:hover {
-  color: #fff;
-}
+
 figure > section {
   height: 100%;
 }
+
+p.figure-row {
+  padding: 0 0 20px 0;
+  border-bottom: dotted 1px #615655;
+  margin: 20px 0;
+}
+
 i {
   position: absolute;
   text-align: center;

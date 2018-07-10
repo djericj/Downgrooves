@@ -1,11 +1,13 @@
 <main class="main">
   <section class="info1">
     <h2>Feed</h2>
-    <p *ngFor="let p of posts | slice : 0 : 5">
-      <a href="{{ p.permalink_url }}" target="_new">
-        {{ p.message }}
-      </a>
-    </p>
+    <ng-template ngFor let-p [ngForOf]="posts | slice : 0 : 5">
+      <p class="figure-row" *ngIf="p?.message?.length">
+        <a href="{{ p.permalink_url }}" target="_new">
+          {{ p.message | removeUrls }}
+        </a>
+      </p>
+    </ng-template>
     <a href="#" class="info-link">from our facebook page...</a>
   </section>
   <section class="info2">
@@ -17,12 +19,13 @@
   </section>
   <section class="info3">
     <hr/>
-    <p *ngFor="let p of posts | slice : 6">
-      <a href="{{ p.permalink_url }}" target="_new">
-        {{ p.message }}
-      </a>
-
-    </p>
+    <ng-template ngFor let-p [ngForOf]="posts | slice : 6">
+      <p class="figure-row" *ngIf="p?.message?.length">
+        <a href="{{ p.permalink_url }}" target="_new">
+          {{ p.message | removeUrls }}
+        </a>
+      </p>
+    </ng-template>
     <a href="#" class="info-link">Learn more...</a>
   </section>
   <figure class="itunes portfolio-item">
