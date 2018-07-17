@@ -4,6 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { IMix } from "../services/interfaces";
 import { Title } from "@angular/platform-browser";
 import { BaseComponent } from "../base/base.component";
+import { IsotopeOptions } from "ngx-isotope";
 
 @Component({
   selector: "app-mixes",
@@ -22,7 +23,6 @@ export class MixesComponent extends BaseComponent implements OnInit {
   ) {
     super();
   }
-
   ngOnInit() {
     this.loading = true;
     this.getMixes();

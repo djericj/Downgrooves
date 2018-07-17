@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { ITunesTrack } from "../services/interfaces";
 import { ITunesService } from "../services/itunes.service";
 import * as _ from "lodash";
@@ -15,6 +15,8 @@ export class MusicComponent extends BaseComponent implements OnInit {
   public tracks: ITunesTrack[] = [];
   public originals: ITunesTrack[] = [];
   public remixes: ITunesTrack[] = [];
+  public error: boolean;
+  public errorMessage: string;
   constructor(
     private http: HttpClient,
     private _iTunesService: ITunesService,
@@ -45,6 +47,17 @@ export class MusicComponent extends BaseComponent implements OnInit {
       this.remixes = this.tracks.filter(element => {
         return element.artistName.indexOf("Downgrooves") == -1;
       });
-    });
+    },
+      (err: HttpErrorResponse) => {
+        this.error = true;
+        if (err.error instanceof Error) {
+          this.errorMessage = err.error.message;
+          //console.log("An error occurred:", err.error.message);
+        } else {
+          //this.errorMessage = err;
+          //console.log(err);
+        }
+      }
+  );
   }
 }

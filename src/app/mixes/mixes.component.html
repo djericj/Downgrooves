@@ -1,4 +1,39 @@
-<div class="text-center">
+<isotope-grid [options]="{ itemSelector: '.portfolio-item' }">
+  <isotope-item *ngFor="let mix of mixes">
+    <div class="portfolio-item {{mix.Category}}">
+      <div class="hover-bg">
+        <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
+          <div class="hover-text">
+            <h4>{{mix.artist}} - {{mix.Name}}</h4>
+          </div>
+          <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}"> </a>
+      </div>
+    </div>
+  </isotope-item>
+</isotope-grid>
+
+
+<!-- <div class="portfolioFilter">
+
+  <a href="#" data-filter="*" class="current">All</a>
+  <a href="#" data-filter=".vocal">Vocal</a>
+  <a href="#" data-filter=".progressive">Progressive</a>
+  <a href="#" data-filter=".classics">Classics</a>
+
+</div>
+<div class="grid">
+  <div class="grid-item">...
+
+  </div>
+  <div class="grid-item grid-item--width2">...
+
+  </div>
+  <div class="grid-item">...
+
+  </div>
+</div> -->
+
+<!-- <div class="text-center">
   <p class="lead" *ngIf="loading">
     <app-loading></app-loading>
   </p>
@@ -41,4 +76,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

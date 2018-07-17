@@ -176,3 +176,14 @@ p {
   text-decoration: none;
   color: #ff9900;
 }
+
+.error-info {
+  background-color: #333;
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  padding: 0 40px;
+}
+
+.error-info a {
+  color: #ff9900;
+}

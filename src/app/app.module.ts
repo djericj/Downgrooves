@@ -24,8 +24,8 @@ import { RemoveUrlsPipe } from "./pipes/remove-urls.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
 import { MixesDetailComponent } from "./mixes/detail/mixes.detail.component";
 import { LoadingComponent } from "./loading/loading.component";
-import { RemixesComponent } from './remixes/remixes.component';
-
+import { RemixesComponent } from "./remixes/remixes.component";
+import { IsotopeModule } from "ngx-isotope/index";
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,11 +53,8 @@ import { RemixesComponent } from './remixes/remixes.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpModule
-    // RouterModule.forRoot(routes, {
-    //   useHash: false,
-    //   onSameUrlNavigation: "reload"
-    // })
+    HttpModule,
+    IsotopeModule
   ],
   providers: [
     ITunesService,

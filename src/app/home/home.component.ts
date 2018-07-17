@@ -9,6 +9,7 @@ import {
 import { ITunesService } from "../services/itunes.service";
 import { FacebookService } from "../services/facebook.service";
 import * as _ from "lodash";
+import { HttpErrorResponse } from "../../../node_modules/@angular/common/http";
 
 @Component({
   selector: "app-home",
@@ -18,6 +19,8 @@ import * as _ from "lodash";
 export class HomeComponent extends BaseComponent implements OnInit {
   public tracks: ITunesTrack[] = [];
   public posts: FacebookPost[];
+  public error: boolean;
+  public errorMessage: string;
   constructor(
     private _iTunesService: ITunesService,
     private _facebookService: FacebookService,
@@ -40,19 +43,31 @@ export class HomeComponent extends BaseComponent implements OnInit {
   }
 
   getITunesData(): void {
-    this._iTunesService.getITunesData("Downgrooves").subscribe(data => {
-      console.log(data);
-      this.tracks = _.uniqBy(data.results, "trackCensoredName");
-      this.tracks = _
-        .uniqBy(this.tracks, "collectionId")
-        .sort(
-          (l, r): number => {
-            if (l.releaseDate > r.releaseDate) return -1;
-            if (l.releaseDate < r.releaseDate) return 1;
-            return 0;
-          }
-        )
-        .slice(0, 7);
-    });
+    this._iTunesService.getITunesData("Downgrooves").subscribe(
+      data => {
+        console.log(data);
+        this.tracks = _.uniqBy(data.results, "trackCensoredName");
+        this.tracks = _
+          .uniqBy(this.tracks, "collectionId")
+          .sort(
+            (l, r): number => {
+              if (l.releaseDate > r.releaseDate) return -1;
+              if (l.releaseDate < r.releaseDate) return 1;
+              return 0;
+            }
+          )
+          .slice(0, 7);
+      },
+      (err: HttpErrorResponse) => {
+        this.error = true;
+        if (err.error instanceof Error) {
+          this.errorMessage = err.error.message;
+          //console.log("An error occurred:", err.error.message);
+        } else {
+          //this.errorMessage = err;
+          //console.log(err);
+        }
+      }
+    );
   }
 }

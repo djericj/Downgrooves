@@ -11,10 +11,7 @@ export class ITunesService {
   constructor(private http: HttpClient) {}
 
   getITunesData(term: string): Observable<ITunesLookupResult> {
-    let apiURL = `${
-      this.apiRoot
-    }?term=${term}&media=music&limit=100&entity=song`;
-
+    let apiURL = `${this.apiRoot}?term=${term}&media=music&entity=song`;
     return this.http.get<ITunesLookupResult>(apiURL);
   }
 

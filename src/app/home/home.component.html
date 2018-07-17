@@ -1,5 +1,5 @@
 <main class="main">
-  <section class="info1">
+  <section [class.info1]="!error" [class.error-info1]="error">
     <h2>Feed</h2>
     <ng-template ngFor let-p [ngForOf]="posts | slice : 0 : 5">
       <p class="figure-row" *ngIf="p?.message?.length">
@@ -10,14 +10,14 @@
     </ng-template>
     <a href="#" class="info-link">from our facebook page...</a>
   </section>
-  <section class="info2">
+  <section [class.info2]="!error" [class.error-info2]="error">
     <h2>Who we are</h2>
     <p>
       <strong>Downgrooves</strong> is a collaboration music project of recording artists
       <strong>Mario &amp; Eric J</strong> based out of Dallas, Texas.</p>
     <a [routerLink]="['/about']" class="info-link">about us...</a>
   </section>
-  <section class="info3">
+  <section [class.info3]="!error" [class.error-info3]="error">
     <hr/>
     <ng-template ngFor let-p [ngForOf]="posts | slice : 6">
       <p class="figure-row" *ngIf="p?.message?.length">
@@ -28,32 +28,34 @@
     </ng-template>
     <a href="#" class="info-link">Learn more...</a>
   </section>
-  <figure class="itunes portfolio-item">
-    <section class="hover-bg">
-      <a href="https://itunes.apple.com/us/artist/downgrooves/570186506" target="_new">
-        <div class="hover-text">
-          <h4>find us on itunes</h4>
-        </div>
-        <i class="fa fa-apple fa-5x"></i>
-      </a>
-    </section>
-  </figure>
-  <figure class="beatport portfolio-item">
-    <section class="hover-bg">
-      <a href="https://www.beatport.com/artist/downgrooves/293260" target="_new">
-        <div class="hover-text">
-          <h4>find us on beatport</h4>
-        </div>
-        <i class="fa fa-beatport fa-5x"></i>
-      </a>
-    </section>
-  </figure>
-  <figure class="figure{{i}}" *ngFor="let track of tracks; index as i" [attr.data-index]="i">
-    <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
+  <ng-container *ngIf="!error">
+    <figure class="itunes portfolio-item">
+      <section class="hover-bg">
+        <a href="https://itunes.apple.com/us/artist/downgrooves/570186506" target="_new">
+          <div class="hover-text">
+            <h4>find us on itunes</h4>
+          </div>
+          <i class="fa fa-apple fa-5x"></i>
+        </a>
+      </section>
+    </figure>
+    <figure class="beatport portfolio-item">
+      <section class="hover-bg">
+        <a href="https://www.beatport.com/artist/downgrooves/293260" target="_new">
+          <div class="hover-text">
+            <h4>find us on beatport</h4>
+          </div>
+          <i class="fa fa-beatport fa-5x"></i>
+        </a>
+      </section>
+    </figure>
+    <figure class="figure{{i}}" *ngFor="let track of tracks; index as i" [attr.data-index]="i">
+      <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
 
-      <img class="figure-img" src="{{ track.artworkUrl100 | enlargeImage }}" alt="{{ track.trackCensoredName }}">
-    </a>
-  </figure>
+        <img class="figure-img" src="{{ track.artworkUrl100 | enlargeImage }}" alt="{{ track.trackCensoredName }}">
+      </a>
+    </figure>
+  </ng-container>
 
 
 </main>
