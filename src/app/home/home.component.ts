@@ -10,6 +10,7 @@ import { ITunesService } from "../services/itunes.service";
 import { FacebookService } from "../services/facebook.service";
 import * as _ from "lodash";
 import { HttpErrorResponse } from "../../../node_modules/@angular/common/http";
+import { Observable } from "../../../node_modules/rxjs";
 
 @Component({
   selector: "app-home",
@@ -17,7 +18,7 @@ import { HttpErrorResponse } from "../../../node_modules/@angular/common/http";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent extends BaseComponent implements OnInit {
-  public tracks: ITunesTrack[] = [];
+  public tracks: Observable<ITunesTrack[]>;
   public posts: FacebookPost[];
   public error: boolean;
   public errorMessage: string;
@@ -31,7 +32,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.getPosts();
-    this.getITunesData();
+    this.tracks = this.getITunesData();
     this._titleService.setTitle(this._siteTitle);
   }
 
@@ -42,13 +43,11 @@ export class HomeComponent extends BaseComponent implements OnInit {
     });
   }
 
-  getITunesData(): void {
-    this._iTunesService.getITunesData("Downgrooves").subscribe(
+  getITunesData(): Observable<ITunesTrack[]> {
+    return this._iTunesService.getITunesData("Downgrooves").map(
       data => {
-        console.log(data);
-        this.tracks = _.uniqBy(data.results, "trackCensoredName");
-        this.tracks = _
-          .uniqBy(this.tracks, "collectionId")
+        return _
+          .uniqBy(data, "collectionId")
           .sort(
             (l, r): number => {
               if (l.releaseDate > r.releaseDate) return -1;

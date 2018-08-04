@@ -217,6 +217,10 @@ ol.type li a:hover {
   /* font-weight: 700; */
 }
 
+.portfolio-item {
+  width: 300px;
+}
+
 .portfolio-item .hover-bg {
   /* height: 195px; */
   overflow: hidden;

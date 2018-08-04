@@ -5,6 +5,7 @@ import { ITunesService } from "../services/itunes.service";
 import * as _ from "lodash";
 import { BaseComponent } from "../base/base.component";
 import { Title } from "@angular/platform-browser";
+import { Observable } from "../../../node_modules/rxjs";
 
 @Component({
   selector: "app-music",
@@ -12,13 +13,10 @@ import { Title } from "@angular/platform-browser";
   styleUrls: ["./music.component.css"]
 })
 export class MusicComponent extends BaseComponent implements OnInit {
-  public tracks: ITunesTrack[] = [];
-  public originals: ITunesTrack[] = [];
-  public remixes: ITunesTrack[] = [];
+  public tracks: Observable<ITunesTrack[]>;
   public error: boolean;
   public errorMessage: string;
   constructor(
-    private http: HttpClient,
     private _iTunesService: ITunesService,
     private _titleService: Title
   ) {
@@ -26,38 +24,21 @@ export class MusicComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getITunesData();
+    this.tracks = this.getITunesData();
     this._titleService.setTitle("Original music | " + this._siteTitle);
   }
 
-  getITunesData(): void {
-    this._iTunesService.getITunesData("Downgrooves").subscribe(data => {
-      console.log(data);
-      this.tracks = _.uniqBy(data.results, "trackCensoredName");
-      this.tracks = _.uniqBy(this.tracks, "collectionId").sort(
-        (l, r): number => {
-          if (l.releaseDate > r.releaseDate) return -1;
-          if (l.releaseDate < r.releaseDate) return 1;
-          return 0;
-        }
-      );
-      this.originals = this.tracks.filter(element => {
-        return element.artistName.indexOf("Downgrooves") > -1;
-      });
-      this.remixes = this.tracks.filter(element => {
-        return element.artistName.indexOf("Downgrooves") == -1;
-      });
-    },
+  getITunesData(): Observable<ITunesTrack[]> {
+    return this._iTunesService.getOriginals().map(
+      data => {
+        return _.uniqBy(data as ITunesTrack[], "collectionId");
+      },
       (err: HttpErrorResponse) => {
         this.error = true;
         if (err.error instanceof Error) {
           this.errorMessage = err.error.message;
-          //console.log("An error occurred:", err.error.message);
-        } else {
-          //this.errorMessage = err;
-          //console.log(err);
         }
       }
-  );
+    );
   }
 }

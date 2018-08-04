@@ -49,7 +49,7 @@
         </a>
       </section>
     </figure>
-    <figure class="figure{{i}}" *ngFor="let track of tracks; index as i" [attr.data-index]="i">
+    <figure class="figure{{i}}" *ngFor="let track of tracks | async; index as i" [attr.data-index]="i">
       <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
 
         <img class="figure-img" src="{{ track.artworkUrl100 | enlargeImage }}" alt="{{ track.trackCensoredName }}">

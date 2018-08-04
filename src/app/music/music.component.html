@@ -10,7 +10,7 @@
 
   </section>
   <ng-container *ngIf="!error">
-    <figure class="figure{{i}}" *ngFor="let track of originals; index as i" [attr.data-index]="i">
+    <figure class="figure{{i}}" *ngFor="let track of tracks | async; index as i" [attr.data-index]="i">
       <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
         <!-- <div class="hover-text">
         <h4>{{ track.artistName }}
