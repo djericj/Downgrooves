@@ -1,17 +1,15 @@
 <div class="portfolio-box">
-  <isotope-grid [options]="{ itemSelector: '.portfolio-item' }">
-    <isotope-item *ngFor="let mix of mixes">
-      <div class="col-sm-3 {{mix.Category}}">
-        <div class="hover-bg item-img-wrap">
-          <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
-            <div class="hover-text">
-              <h4>{{mix.artist}} - {{mix.Name}}</h4>
-            </div>
-            <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}"> </a>
-        </div>
+  <div *ngFor="let mix of mixes | async">
+    <div class="col-sm-3 {{mix.Category}}">
+      <div class="hover-bg item-img-wrap">
+        <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
+          <div class="hover-text">
+            <h4>{{mix.artist}} - {{mix.Name}}</h4>
+          </div>
+          <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}"> </a>
       </div>
-    </isotope-item>
-  </isotope-grid>
+    </div>
+  </div>
 </div>
 
 <!-- <div class="portfolioFilter">

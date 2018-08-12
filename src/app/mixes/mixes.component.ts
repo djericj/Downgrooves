@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { IMix } from "../services/interfaces";
 import { Title } from "@angular/platform-browser";
 import { BaseComponent } from "../base/base.component";
-import { IsotopeOptions } from "ngx-isotope";
+import { Observable } from "../../../node_modules/rxjs";
 
 @Component({
   selector: "app-mixes",
@@ -13,7 +13,7 @@ import { IsotopeOptions } from "ngx-isotope";
   providers: [MixesService]
 })
 export class MixesComponent extends BaseComponent implements OnInit {
-  public mixes: IMix[];
+  public mixes: Observable<IMix[]>;
   public category: string;
   public loading: boolean;
   constructor(
@@ -24,41 +24,44 @@ export class MixesComponent extends BaseComponent implements OnInit {
     super();
   }
   ngOnInit() {
-    this.loading = true;
-    this.getMixes();
-    this.loading = false;
+    //this.mixes = this.getMixCategory();
+    this.mixes = this.getMixes("");
   }
 
-  getMixes() {
-    this._route.params.subscribe(params => {
-      let category: string = params["category"];
-      this._mixesService.getMixes().subscribe(
-        // the first argument is a function which runs on success
-        data => {
-          this.mixes = data;
-          this.titleService.setTitle("DJ Mixes | Downgrooves Electronic Music");
-          this.mixes = this.mixes.sort(
-            (l, r): number => {
-              if (l.CreateDate > r.CreateDate) return -1;
-              if (l.CreateDate < r.CreateDate) return 1;
-              return 0;
-            }
-          );
-          if (category) {
-            this.mixes = this.mixes.filter(x => {
-              return x.Category.toUpperCase() == category.toUpperCase();
-            });
-            this.category = category;
-            this.titleService.setTitle(
-              category.charAt(0).toUpperCase() +
-                category.slice(1) +
-                " " +
-                "DJ mixes | " +
-                this._siteTitle
-            );
+  // getMixCategory(): Observable<IMix[]> {
+  //   // return this._route.params.map(params => {
+  //   //   let category: string = params["category"];
+  //   //   return this.getMixes(category);
+  //   // });
+  // }
+
+  getMixes(category): Observable<IMix[]> {
+    return this._mixesService.getMixes().map(
+      // the first argument is a function which runs on success
+      data => {
+        this.titleService.setTitle("DJ Mixes | Downgrooves Electronic Music");
+        data.sort(
+          (l, r): number => {
+            if (l.CreateDate > r.CreateDate) return -1;
+            if (l.CreateDate < r.CreateDate) return 1;
+            return 0;
           }
+        );
+        if (category) {
+          data = data.filter(x => {
+            return x.Category.toUpperCase() == category.toUpperCase();
+          });
+          this.category = category;
+          this.titleService.setTitle(
+            category.charAt(0).toUpperCase() +
+              category.slice(1) +
+              " " +
+              "DJ mixes | " +
+              this._siteTitle
+          );
         }
-      );
-    });
+        return data;
+      }
+    );
   }
 }

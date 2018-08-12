@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { AudioService } from "../services/audio.service";
 import { ITunesTrack } from "../services/interfaces";
+import { soundManager } from "soundmanager2";
 
 @Component({
   selector: "app-player",
@@ -28,15 +29,28 @@ export class PlayerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.audioService.getPlayerStatus().subscribe(x => {
-      this.status = x;
-      this.setPausePlayButton();
-      this.handleStatusChanged();
+    soundManager.setup({
+      url: "../../node_modules/soundmanager2/swf/soundmanager2.swf",
+      onready: function() {
+        // var mySound = soundManager.createSound({
+        //   id: "aSound",
+        //   url: "assets/mp3/eric_j_-_vocal_01.mp3"
+        // });
+        // mySound.play();
+      },
+      ontimeout: function() {
+        // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+      }
     });
-    // On song end
-    this.audioService.audio.onended = this.handleEnded.bind(this);
-    // On play time update
-    this.audioService.audio.ontimeupdate = this.handleTimeUpdate.bind(this);
+    // this.audioService.getPlayerStatus().subscribe(x => {
+    //   this.status = x;
+    //   this.setPausePlayButton();
+    //   this.handleStatusChanged();
+    // });
+    // // On song end
+    // this.audioService.audio.onended = this.handleEnded.bind(this);
+    // // On play time update
+    // this.audioService.audio.ontimeupdate = this.handleTimeUpdate.bind(this);
   }
 
   // ngOnDestroy() {

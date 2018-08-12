@@ -164,6 +164,11 @@ textarea {
   padding-left: 260px;
   height: 100%;
 }
+
+.inner-content {
+  height: 100%;
+  padding-bottom: 110px;
+}
 .btn:focus,
 .btn:active:focus {
   outline: none;
@@ -575,4 +580,14 @@ i.fa:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
+}
+
+.player-region {
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  border-top: solid 1px #aaa;
+  z-index: 1000;
+  background-color: #000;
+  width: 100%;
 }
