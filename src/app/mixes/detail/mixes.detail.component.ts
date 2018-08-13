@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { MixesService } from "../../services/mixes.service";
+import { PlayerService } from "../../services/player.service";
 import { IMix } from "../../services/interfaces";
 import * as moment_ from "moment";
 import { Title } from "@angular/platform-browser";
@@ -16,13 +17,18 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _mixesService: MixesService,
-    private _titleService: Title
+    private _titleService: Title,
+    private _playerService: PlayerService
   ) {
     super();
   }
 
   ngOnInit() {
     this.getDetail();
+  }
+
+  playMix(mix: string) {
+    this._playerService.playTrack(mix);
   }
 
   getDetail() {

@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="col-md-3 col-xs-12">
-          <a href="../../../assets/mp3/{{ mix.Mp3File }}" class="pull-right" target="_new">Listen</a>
+          <a (click)="playMix('../../../assets/mp3/' + mix.Mp3File )" class="pull-right" target="_new">Listen</a>
         </div>
       </div>
       <div class="row">

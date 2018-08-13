@@ -1,71 +1,178 @@
-<div class="player-region">
-  
-</div>
+<div class="player-region sm2-bar-ui full-width fixed">
 
+  <div class="col-xs-4">
+    <div class="col-xs-3" style="bottom:40px;">
+      <img class="img-responsive img-thumbnail" src="../../../assets/images/mixes/vocaldisc08.jpg" alt="">
+    </div>
+    <div class="col-xs-9">
+      <h4>Vocal 08</h4>
+      <p>mixed by Eric J</p>
+    </div>
+  </div>
+  <div class="col-xs-8">
+    <div class="bd sm2-main-controls">
+      <div class="sm2-inline-element sm2-button-element">
+        <div class="sm2-button-bd">
+          <a href="#play" class="sm2-inline-button sm2-icon-play-pause">Play / pause</a>
+        </div>
+      </div>
 
-<!-- <div class="player-region">
+      <div class="sm2-inline-element sm2-inline-status">
 
-  <div>
-
-    <div class="player-control">
-
-      <div class="player-control-bottom">
-
-        <div class="controlling-options">
-          <div class="btn" (click)="handleBackward()">
-            <i class="fa fa-step-backward"></i>
-          </div>
-          <div class="btn" (click)="handlePausePlay()">
-            <div *ngIf="paused;then pause else play;"></div>
-            <ng-template #play>
-              <i class="fa fa-pause"></i>
-            </ng-template>
-            <ng-template #pause>
-              <i class="fa fa-play"></i>
-            </ng-template>
-          </div>
-          <div class="btn" (click)="handleForward()">
-            <i class="fa fa-step-forward"></i>
-          </div>
-
-          <div class="btn btn-noclick">
-            <span>
-              <span class="badge">{{ volume * 100 | number:0 }}%</span>
-            </span>
-          </div>
-          <div class="btn" ng-click="handleVolumeDown(volume - 0.1)">
-            <span>
-              <i class="fa fa-volume-down"></i>
-            </span>
-          </div>
-          <div class="btn" ng-click="handleVolumeUp(volume + 0.1)">
-            <span>
-              <i class="fa fa-volume-up"></i>
-            </span>
+        <div class="sm2-playlist">
+          <div class="sm2-playlist-target">
+            <!-- playlist <ul> + <li> markup will be injected here -->
+            <!-- if you want default / non-JS content, you can put that here. -->
+            <noscript>
+              <p>JavaScript is required.</p>
+            </noscript>
           </div>
         </div>
 
-        <div class="song-duration">
-          <span class="song-duration-beg">
-            <i class="fa fa-clock-o"></i>:
-            <span class="badge">{{ elapsed }}</span>
-          </span>
-          <div class="progress" ng-click="mediaPlayer.seek(duration * generalPlaylist.seekPercentage($event))">
-            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="percentElapsed + '%'"></div>
+        <div class="sm2-progress">
+          <div class="sm2-row">
+            <div class="sm2-inline-time">0:00</div>
+            <div class="sm2-progress-bd">
+              <div class="sm2-progress-track">
+                <div class="sm2-progress-bar"></div>
+                <div class="sm2-progress-ball">
+                  <div class="icon-overlay"></div>
+                </div>
+              </div>
+            </div>
+            <div class="sm2-inline-duration">0:00</div>
           </div>
-          <span class="song-duration-end">{{ length }}</span>
-        </div>
-        <div class="btn btn-noclick">
-          <span>
-            <span class="badge">{{ title }}</span>
-          </span>
         </div>
 
+      </div>
 
+      <div class="sm2-inline-element sm2-button-element sm2-volume">
+        <div class="sm2-button-bd">
+          <span class="sm2-inline-button sm2-volume-control volume-shade"></span>
+          <a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
+        </div>
+      </div>
+
+      <div class="sm2-inline-element sm2-button-element">
+        <div class="sm2-button-bd">
+          <a href="#prev" title="Previous" class="sm2-inline-button sm2-icon-previous">&lt; previous</a>
+        </div>
+      </div>
+
+      <div class="sm2-inline-element sm2-button-element">
+        <div class="sm2-button-bd">
+          <a href="#next" title="Next" class="sm2-inline-button sm2-icon-next">&gt; next</a>
+        </div>
+      </div>
+
+      <div class="sm2-inline-element sm2-button-element">
+        <div class="sm2-button-bd">
+          <a href="#repeat" title="Repeat playlist" class="sm2-inline-button sm2-icon-repeat">&infin; repeat</a>
+        </div>
+      </div>
+
+      <!-- not implemented -->
+      <!--
+  <div class="sm2-inline-element sm2-button-element disabled">
+   <div class="sm2-button-bd">
+    <a href="#shuffle" title="Shuffle" class="sm2-inline-button sm2-icon-shuffle">shuffle</a>
+   </div>
+  </div>
+  -->
+
+      <div class="sm2-inline-element sm2-button-element sm2-menu">
+        <div class="sm2-button-bd">
+          <a href="#menu" class="sm2-inline-button sm2-icon-menu">menu</a>
+        </div>
       </div>
 
     </div>
 
+    <div class="bd sm2-playlist-drawer sm2-element">
+
+      <div class="sm2-inline-texture">
+        <div class="sm2-box-shadow"></div>
+      </div>
+
+      <!-- playlist content is mirrored here -->
+
+      <div class="sm2-playlist-wrapper">
+
+        <ul class="sm2-playlist-bd">
+
+          <!-- item with "download" link -->
+          <li>
+            <div class="sm2-row">
+              <div class="sm2-col sm2-wide">
+                <a href="http://freshly-ground.com/data/audio/sm2/SonReal%20-%20LA%20%28Prod%20Chin%20Injetti%29.mp3">
+                  <b>SonReal</b> - LA
+                  <span class="label">Explicit</span>
+                </a>
+              </div>
+              <div class="sm2-col">
+                <a href="http://freshly-ground.com/data/audio/sm2/SonReal%20-%20LA%20%28Prod%20Chin%20Injetti%29.mp3" target="_blank" title="Download &quot;LA&quot;"
+                  class="sm2-icon sm2-music sm2-exclude">Download this track</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- standard one-line items -->
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/SonReal%20-%20Let%20Me%20%28Prod%202oolman%29.mp3">
+              <b>SonReal</b> - Let Me
+              <span class="label">Explicit</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/SonReal%20-%20People%20Asking.mp3">
+              <b>SonReal</b> - People Asking
+              <span class="label">Explicit</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/SonReal%20-%20Already%20There%20Remix%20ft.%20Rich%20Kidd%2C%20Saukrates.mp3">
+              <b>SonReal</b> - Already There Remix ft. Rich Kidd, Saukrates
+              <span class="label">Explicit</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/The%20Fugitives%20-%20Graffiti%20Sex.mp3">
+              <b>The Fugitives</b> - Graffiti Sex</a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/Adrian%20Glynn%20-%20Seven%20Or%20Eight%20Days.mp3">
+              <b>Adrian Glynn</b> - Seven Or Eight Days</a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/SonReal%20-%20I%20Tried.mp3">
+              <b>SonReal</b> - I Tried</a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/mpc/20060826%20-%20Armstrong.mp3">Armstrong Beat</a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/mpc/20090119%20-%20Untitled%20Groove.mp3">Untitled Groove</a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/birds-in-kauai-128kbps-aac-lc.mp4">Birds In Kaua'i (AAC)</a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/20130320%20-%20Po%27ipu%20Beach%20Waves.ogg">Po'ipu Beach Waves (OGG)</a>
+          </li>
+          <li>
+            <a href="http://freshly-ground.com/data/audio/sm2/bottle-pop.wav">A corked beer bottle (WAV)</a>
+          </li>
+          <li>
+            <a href="../../demo/_mp3/rain.mp3">Rain</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
   </div>
 
-</div> -->
+
+
+</div>

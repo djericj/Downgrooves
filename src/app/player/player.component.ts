@@ -42,6 +42,7 @@ export class PlayerComponent implements OnInit {
         // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
       }
     });
+
     // this.audioService.getPlayerStatus().subscribe(x => {
     //   this.status = x;
     //   this.setPausePlayButton();
@@ -52,6 +53,13 @@ export class PlayerComponent implements OnInit {
     // // On play time update
     // this.audioService.audio.ontimeupdate = this.handleTimeUpdate.bind(this);
   }
+
+  play() {}
+  pause() {}
+  forward() {}
+  backward() {}
+  fastFoward() {}
+  fastBackward() {}
 
   // ngOnDestroy() {
   //   this.audioService.getPlayerStatus().unsubscribe()
