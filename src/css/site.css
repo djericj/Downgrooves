@@ -169,10 +169,20 @@ textarea {
   height: 100%;
   padding-bottom: 110px;
 }
-.btn:focus,
-.btn:active:focus {
-  outline: none;
-  color: #ffffff;
+
+button.btn,
+button.btn:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.btn {
+  background-color: transparent; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
 }
 
 ul.menu > li a:hover,

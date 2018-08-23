@@ -1,18 +1,20 @@
-import { Injectable } from "@angular/core";
-import { soundManager } from "soundmanager2";
+import { ITunesTrack, IMix, PlayerTrack } from "../services/interfaces";
+import { Subject } from "../../../node_modules/rxjs/Subject";
+import { MusicPlayerService } from "ngx-soundmanager2";
 
-@Injectable()
+//var soundManager: any;
 export class PlayerService {
   mySound;
+  playerTrack: PlayerTrack;
+
+  currentTrack$: Subject<any> = new Subject<any>();
+  status$: Subject<any> = new Subject<any>();
+
   constructor() {
     soundManager.setup({
       url: "../../node_modules/soundmanager2/swf/soundmanager2.swf",
       onready: function() {
-        // var mySound = soundManager.createSound({
-        //   id: "aSound",
-        //   url: "assets/mp3/eric_j_-_vocal_01.mp3"
-        // });
-        // mySound.play();
+        // document.ready goes here
       },
       ontimeout: function() {
         // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
@@ -20,19 +22,27 @@ export class PlayerService {
     });
   }
 
-  addToPlaylist(track: string) {
+  load(track: PlayerTrack) {
     this.mySound = soundManager.createSound({
-      id: track, // use track path as unique id
-      url: track
+      id: track.audioFile, // use track path as unique id
+      url: track.audioFile
     });
+    this.status$.next("load");
+    this.currentTrack$.next(track);
+  }
+
+  clear() {
+    this.status$.next("clear");
+    this.mySound = null;
   }
 
   play() {
-    this.stopAll();
+    this.status$.next("play");
     this.mySound.play();
   }
 
   stop() {
+    this.status$.next("stop");
     this.mySound.stop();
   }
 
@@ -41,11 +51,33 @@ export class PlayerService {
   }
 
   pause() {
+    this.status$.next("pause");
     this.mySound.pause();
   }
 
-  playTrack(track: string) {
-    this.addToPlaylist(track);
+  playTrack(track: ITunesTrack) {
+    this.stopAll();
+    var t = new PlayerTrack(
+      track.artistName,
+      track.trackName,
+      track.artworkUrl100,
+      track.previewUrl,
+      track.trackTimeMillis
+    );
+    this.load(t);
+    this.play();
+  }
+
+  playMix(mix: IMix) {
+    this.stopAll();
+    var track = new PlayerTrack(
+      "mixed by " + mix.artist,
+      mix.Name,
+      "assets/images/mixes/" + mix.attachment,
+      "assets/mp3/" + mix.Mp3File,
+      mix.Length
+    );
+    this.load(track);
     this.play();
   }
 }

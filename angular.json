@@ -22,6 +22,7 @@
               "src/css/font-awesome.css",
               "src/css/isotope.css",
               "src/css/responsive.css",
+              "src/css/soundmanager2.css",
               "src/css/site.css"
             ],
             "scripts": [
