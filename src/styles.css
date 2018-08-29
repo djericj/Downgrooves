@@ -224,6 +224,11 @@ header {
 
 /* portfolio box & hover */
 
+.img-thumbnail {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
 .figure-img {
   display: block;
   width: 100%;
