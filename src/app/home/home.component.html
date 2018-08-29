@@ -2,7 +2,7 @@
   <section [class.info1]="!error" [class.error-info1]="error">
     <h2>Feed</h2>
     <ng-template ngFor let-p [ngForOf]="posts | slice : 0 : 5">
-      <p class="figure-row" *ngIf="p?.message?.length">
+      <p *ngIf="p?.message?.length">
         <a href="{{ p.permalink_url }}" target="_new">
           {{ p.message | removeUrls }}
         </a>
@@ -20,7 +20,7 @@
   <section [class.info3]="!error" [class.error-info3]="error">
     <hr/>
     <ng-template ngFor let-p [ngForOf]="posts | slice : 6">
-      <p class="figure-row" *ngIf="p?.message?.length">
+      <p *ngIf="p?.message?.length">
         <a href="{{ p.permalink_url }}" target="_new">
           {{ p.message | removeUrls }}
         </a>

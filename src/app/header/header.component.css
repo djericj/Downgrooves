@@ -1,3 +1,182 @@
 a {
   padding: 0;
 }
+
+/* logo */
+
+.logo-box {
+  padding: 30px 30px;
+  background: #212529;
+  text-align: center;
+}
+
+.logo h1 {
+  margin: 0px;
+  font-family: "Crete Round", serif;
+  letter-spacing: 0.13em;
+}
+
+.logo a {
+  color: #111;
+}
+
+.logo p {
+  font-style: italic;
+  font-family: "Crete Round", serif;
+  font-size: 12px;
+}
+
+.logo-img {
+  margin-right: 10px;
+  height: 60px;
+  transform: scaleX(-1);
+}
+
+.logo-text {
+  font-family: "Lobster", cursive;
+  font-size: 2.6em;
+  color: #c3bab9;
+  text-shadow: -1px -1px 0 #615655, 1px -1px 0 #615655, -1px 1px 0 #615655,
+    1px 1px 0 #615655;
+}
+
+/* memnu */
+ul.menu {
+  padding: 0;
+  margin: 0;
+}
+
+
+ul.menu > li {
+  list-style: none;
+  position: relative;
+}
+
+ul.menu > li > a,
+ul.drop-down li a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 14px 24px 14px 30px;
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 20px;
+  background-color: #242b2e;
+  transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+}
+
+ul.menu > li > a i {
+  vertical-align: middle;
+  font-size: 15px;
+  width: 30px;
+}
+
+ul.menu li a span {
+  position: relative;
+  z-index: 2;
+  vertical-align: middle;
+}
+
+ul.menu li a:hover:after,
+ul.menu li a.active:after {
+  width: 100%;
+}
+
+/* Social */
+
+.social-box {
+  padding: 28px 24px 70px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0px;
+}
+
+ul.social-icons {
+  padding: 0;
+  margin: 0;
+}
+
+ul.social-icons li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+ul.social-icons li:first-child {
+  margin-left: 0px;
+}
+
+ul.social-icons li a {
+  display: inline-block;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.17s ease-in-out;
+  -moz-transition: all 0.17s ease-in-out;
+  -webkit-transition: all 0.17s ease-in-out;
+  -o-transition: all 0.17s ease-in-out;
+}
+
+ul.social-icons li a.facebook {
+  background: #3e5ea2;
+}
+
+ul.social-icons li a.twitter {
+  background: #2eb0e3;
+}
+
+ul.social-icons li a.github {
+  background: #fff;
+}
+
+ul.social-icons li a.pinterest {
+  background: #f43a2c;
+}
+
+ul.social-icons li a.google {
+  background: #da5f2e;
+}
+
+ul.social-icons li a.youtube {
+  background: #df2826;
+}
+
+ul.social-icons li a.linkedin {
+  background: #107cb7;
+}
+
+ul.social-icons li a:hover {
+  opacity: 0.7;
+}
+
+ul.social-icons li a i {
+  color: #fff;
+  font-size: 15px;
+  line-height: 24px;
+  transition: all 0.17s ease-in-out;
+  -moz-transition: all 0.17s ease-in-out;
+  -webkit-transition: all 0.17s ease-in-out;
+  -o-transition: all 0.17s ease-in-out;
+}
+
+p.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  margin-top: 18px;
+  line-height: 20px;
+}

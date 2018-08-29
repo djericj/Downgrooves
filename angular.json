@@ -20,10 +20,8 @@
             "styles": [
               "src/css/bootstrap.css",
               "src/css/font-awesome.css",
-              "src/css/isotope.css",
-              "src/css/responsive.css",
               "src/css/soundmanager2.css",
-              "src/css/site.css"
+              "src/styles.css"
             ],
             "scripts": [
               "src/js/jquery-3.0.0.min.js",
@@ -87,7 +85,6 @@
             "styles": [
               "src/css/bootstrap.min.css",
               "src/css/font-awesome.css",
-              "src/css/site.css",
               "src/styles.css"
             ],
             "assets": ["src/assets", "src/favicon.ico"]
