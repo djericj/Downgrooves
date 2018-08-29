@@ -1,29 +1,42 @@
-<div class="player-region sm2-bar-ui full-width fixed" *ngIf="track">
+<div class="player-region sm2-bar-ui full-width fixed" *ngIf="currentPlaying">
 
   <div class=" col-xs-4 ">
     <div class="col-xs-3 " style="bottom:40px; ">
-      <img class="img-responsive img-thumbnail " src="{{track.cover}} " alt="{{track.cover}} ">
+      <img class="img-responsive img-thumbnail " src="{{currentPlaying.image}}" alt="{{currentPlaying.title}}">
     </div>
     <div class="col-xs-9 ">
-      <h4>{{track.title}}</h4>
-      <p>{{track.artist}}</p>
+      <h4>{{currentPlaying.title}}</h4>
+      <p>{{currentPlaying.artist}}</p>
     </div>
   </div>
   <div class="col-xs-8 ">
     <div class="bd sm2-main-controls ">
       <div class="sm2-inline-element sm2-button-element ">
         <div class="sm2-button-bd ">
-          <ng-container *ngIf="status==='pause'">
+          <!-- <ng-container *ngIf="!_musicPlayerService.isPlaying">
             <button (click)="play() ">
               <i class="fa fa-2x fa-play "></i>
             </button>
           </ng-container>
 
-          <ng-container *ngIf="status==='play'">
+          <ng-container *ngIf="_musicPlayerService.isPlaying">
             <button (click)="pause() ">
               <i class="fa fa-2x fa-pause "></i>
             </button>
-          </ng-container>
+          </ng-container> -->
+
+          <div class="button-row">
+            <button mat-raised-button color="primary" class="btn" playMusic>
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <button mat-raised-button color="accent" class="btn" pauseMusic>
+              <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+            <button mat-raised-button color="warn" class="btn" stopMusic>
+              <i class="fa fa-stop" aria-hidden="true"></i>
+            </button>
+            <button mat-raised-button repeatMusic>Repeat</button>
+          </div>
 
         </div>
       </div>
@@ -40,7 +53,13 @@
           </div>
         </div>
 
-        <div class="sm2-progress ">
+        <div class="progress" style="height: 20px; width: 100%;">
+          <div class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{width : progress }">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+
+        <!-- <div class="sm2-progress ">
           <div class="sm2-row ">
             <div class="sm2-inline-time ">0:00</div>
             <div class="sm2-progress-bd ">
@@ -53,7 +72,7 @@
             </div>
             <div class="sm2-inline-duration ">{{track.Length}}</div>
           </div>
-        </div>
+        </div> -->
 
       </div>
 

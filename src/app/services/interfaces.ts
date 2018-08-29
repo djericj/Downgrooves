@@ -4,18 +4,21 @@ export class PlayerTrack {
   cover: string;
   audioFile: string;
   length: string;
+  url: string;
   constructor(
     artist: string,
     title: string,
     cover: string,
     audioFile: string,
-    length: string
+    length: string,
+    url: string
   ) {
     this.artist = artist;
     this.title = title;
     this.cover = cover;
     this.audioFile = audioFile;
     this.length = length;
+    this.url = url;
   }
 }
 export interface IPlayerTrack {
@@ -85,6 +88,7 @@ export interface IMix {
   LastPlay: string;
   Tracks: Track[] | Track;
   Length: string;
+  url: string;
 }
 
 export interface Track {

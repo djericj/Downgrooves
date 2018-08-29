@@ -178,7 +178,7 @@ button.btn:hover {
 
 .btn {
   background-color: transparent; /* Blue background */
-  border: none; /* Remove borders */
+  border: 0; /* Remove borders */
   color: white; /* White text */
   padding: 12px 16px; /* Some padding */
   font-size: 16px; /* Set a font size */

@@ -1,7 +1,5 @@
 import { ITunesTrack, IMix, PlayerTrack } from "../services/interfaces";
 import { Subject } from "../../../node_modules/rxjs/Subject";
-import { MusicPlayerService } from "ngx-soundmanager2";
-
 //var soundManager: any;
 export class PlayerService {
   mySound;
@@ -11,22 +9,22 @@ export class PlayerService {
   status$: Subject<any> = new Subject<any>();
 
   constructor() {
-    soundManager.setup({
-      url: "../../node_modules/soundmanager2/swf/soundmanager2.swf",
-      onready: function() {
-        // document.ready goes here
-      },
-      ontimeout: function() {
-        // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
-      }
-    });
+    // soundManager.setup({
+    //   url: "../../node_modules/soundmanager2/swf/soundmanager2.swf",
+    //   onready: function() {
+    //     // document.ready goes here
+    //   },
+    //   ontimeout: function() {
+    //     // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+    //   }
+    // });
   }
 
   load(track: PlayerTrack) {
-    this.mySound = soundManager.createSound({
-      id: track.audioFile, // use track path as unique id
-      url: track.audioFile
-    });
+    // this.mySound = soundManager.createSound({
+    //   id: track.audioFile, // use track path as unique id
+    //   url: track.audioFile
+    // });
     this.status$.next("load");
     this.currentTrack$.next(track);
   }
@@ -47,7 +45,7 @@ export class PlayerService {
   }
 
   stopAll() {
-    soundManager.stopAll();
+    //soundManager.stopAll();
   }
 
   pause() {
@@ -62,7 +60,8 @@ export class PlayerService {
       track.trackName,
       track.artworkUrl100,
       track.previewUrl,
-      track.trackTimeMillis
+      track.trackTimeMillis,
+      track.previewUrl
     );
     this.load(t);
     this.play();
@@ -74,8 +73,9 @@ export class PlayerService {
       "mixed by " + mix.artist,
       mix.Name,
       "assets/images/mixes/" + mix.attachment,
-      "assets/mp3/" + mix.Mp3File,
-      mix.Length
+      mix.Mp3File,
+      "0",
+      "assets/images/mixes/" + mix.attachment
     );
     this.load(track);
     this.play();
