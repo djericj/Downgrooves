@@ -14,7 +14,6 @@ import { MixesService } from "./services/mixes.service";
 import { FacebookService } from "./services/facebook.service";
 import { ITunesService } from "./services/itunes.service";
 import { LayoutService } from "./services/layout.service";
-import { PlayerService } from "./services/player.service";
 
 /* components */
 import { AppComponent } from "./app.component";
@@ -78,8 +77,7 @@ import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
     MixesService,
     BrowserService,
     FacebookService,
-    LayoutService,
-    PlayerService
+    LayoutService
   ],
   bootstrap: [AppComponent]
 })

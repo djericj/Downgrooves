@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { MusicPlayerService } from "ngx-soundmanager2";
-import { PlayerService } from "../services/player.service";
 import { PlayerTrack } from "../services/interfaces";
 declare var $: any;
 
@@ -27,17 +26,7 @@ export class PlayerComponent implements OnInit {
   private _musicPlayerMuteSubscription: any;
   private _musicPlayerTrackIdSubscription: any;
   private _musicPlayerVolumeSubscription: any;
-  constructor(
-    private playerService: PlayerService,
-    private _musicPlayerService: MusicPlayerService
-  ) {
-    this.playerService.status$.subscribe(data => {
-      this.status = data;
-    });
-    this.playerService.currentTrack$.subscribe(data => {
-      this.load(data);
-    });
-  }
+  constructor(private _musicPlayerService: MusicPlayerService) {}
 
   ngOnInit() {
     // Subscribe for mute changes to update bindings
@@ -83,21 +72,4 @@ export class PlayerComponent implements OnInit {
   get playlist(): any {
     return this._musicPlayerService.getPlaylist();
   }
-
-  load(track: PlayerTrack) {
-    this.track = track;
-  }
-
-  play() {
-    this.paused = !this.paused;
-    this.playerService.play();
-  }
-  pause() {
-    this.paused = !this.paused;
-    this.playerService.pause();
-  }
-  forward() {}
-  backward() {}
-  fastFoward() {}
-  fastBackward() {}
 }

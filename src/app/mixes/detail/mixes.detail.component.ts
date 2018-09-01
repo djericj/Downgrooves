@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { MixesService } from "../../services/mixes.service";
-import { PlayerService } from "../../services/player.service";
 import { IMix } from "../../services/interfaces";
 import * as moment_ from "moment";
 import { Title } from "@angular/platform-browser";
@@ -20,7 +19,6 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
     private _route: ActivatedRoute,
     private _mixesService: MixesService,
     private _titleService: Title,
-    private _playerService: PlayerService,
     private _musicPlayerService: MusicPlayerService
   ) {
     super();
@@ -28,21 +26,10 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.getDetail();
-
-    this.songs = [
-      {
-        id: "one",
-        title: "The Sunday Shore",
-        artist: "Mario & Eric J",
-        url:
-          "http://localhost:4200/assets/mp3/mario_and_eric_j_-_the_sunday_shore.mp3",
-        image: "http://localhost:4200/assets/images/mixes/sundayshore.png"
-      }
-    ];
   }
 
   playMix() {
-    this._playerService.playMix(this.mix);
+    //this._playerService.playMix(this.mix);
   }
 
   getDetail() {
@@ -59,6 +46,17 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
             " | " +
             this._siteTitle
         );
+        this.songs = [
+          {
+            id: "one",
+            title: this.mix.Name,
+            artist: "mixed by " + this.mix.artist,
+            url: "http://localhost:4200/assets/mp3/" + this.mix.Mp3File,
+            image:
+              "http://localhost:4200/assets/images/mixes/" + this.mix.attachment
+          }
+        ];
+        console.log(this.songs);
       });
     });
   }
