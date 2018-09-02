@@ -34,10 +34,7 @@
           </div>
         </div>
         <div class="col-md-3 col-xs-12">
-          <!-- <button (click)="playMix('../../../assets/mp3/' + mix.Mp3File )" class="pull-right" target="_new">Listen</button> -->
-          <div *ngFor="let song of songs" class="songs">
-            <button class="pull-right" [musicPlayer]="'play'" clearPlaylist [song]="song">Listen</button>
-          </div>
+          <button (click)="playMix()" class="pull-right" target="_new">Listen</button>
         </div>
       </div>
       <div class="row">

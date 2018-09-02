@@ -2,3 +2,10 @@ a {
   background: none;
   padding: 0px;
 }
+.grid-item {
+  width: 25%;
+  float: left;
+}
+.grid-item--width2 {
+  width: 50%;
+}

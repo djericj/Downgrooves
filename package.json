@@ -32,7 +32,6 @@
     "masonry-layout": "^4.2.2",
     "moment": "^2.22.2",
     "ngx-isotope": "^0.1.7",
-    "ngx-soundmanager2": "^0.2.3",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

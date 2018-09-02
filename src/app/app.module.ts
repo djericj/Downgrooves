@@ -4,8 +4,6 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app.routes";
 import { HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
 import { HttpModule, JsonpModule, Jsonp, Response } from "@angular/http";
-import { IsotopeModule } from "ngx-isotope/index";
-import { NgxSoundmanager2Module } from "ngx-soundmanager2";
 
 /* services */
 import { BrowserService } from "./services/browser.service";
@@ -14,6 +12,7 @@ import { MixesService } from "./services/mixes.service";
 import { FacebookService } from "./services/facebook.service";
 import { ITunesService } from "./services/itunes.service";
 import { LayoutService } from "./services/layout.service";
+import { PlayerService } from "./services/player.service";
 
 /* components */
 import { AppComponent } from "./app.component";
@@ -67,9 +66,7 @@ import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
     HttpClientModule,
     HttpClientJsonpModule,
     HttpModule,
-    IsotopeModule,
-    JsonpModule,
-    NgxSoundmanager2Module.forRoot()
+    JsonpModule
   ],
   providers: [
     ITunesService,
@@ -77,7 +74,8 @@ import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
     MixesService,
     BrowserService,
     FacebookService,
-    LayoutService
+    LayoutService,
+    PlayerService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,17 +1,35 @@
-<div class="portfolio-box">
+<!-- <div class="portfolio-box grid">
   <div *ngFor="let mix of mixes | async">
-    <div class="col-sm-3 {{mix.Category}}">
+    <div class="col-sm-3 {{mix.Category}} grid-item">
       <div class="hover-bg item-img-wrap">
         <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
           <div class="hover-text">
             <h4>{{mix.artist}} - {{mix.Name}}</h4>
           </div>
-          <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}"> </a>
+          <li class="is-loading"><img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}"></li>
+        </a>
       </div>
     </div>
   </div>
+</div> -->
+<!-- <script>
+  $('.grid').isotope({
+    // options
+    itemSelector: '.grid-item',
+    layoutMode: 'fitRows'
+  });</script> -->
+<div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
+  <ng-container *ngFor="let mix of mixes | async">
+    <div class="grid-item {{mix.Category}} hover-bg item-img-wrap">
+        <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
+            <div class="hover-text">
+            <h4>{{mix.artist}} - {{mix.Name}}</h4>
+          </div>
+            <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}">
+        </a>
+    </div>
+  </ng-container>
 </div>
-
 <!-- <div class="portfolioFilter">
 
   <a href="#" data-filter="*" class="current">All</a>

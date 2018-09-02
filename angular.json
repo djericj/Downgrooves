@@ -20,16 +20,11 @@
             "styles": [
               "src/css/bootstrap.css",
               "src/css/font-awesome.css",
-              "src/css/soundmanager2.css",
               "src/styles.css"
             ],
             "scripts": [
               "src/js/jquery-3.0.0.min.js",
               "src/js/bootstrap.min.js",
-              "node_modules/imagesloaded/imagesloaded.pkgd.min.js",
-              "node_modules/masonry-layout/dist/masonry.pkgd.min.js",
-              "node_modules/isotope-layout/dist/isotope.pkgd.min.js",
-              "node_modules/soundmanager2/script/soundmanager2-jsmin.js",
               "src/js/site.js"
             ]
           },
