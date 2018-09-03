@@ -7,16 +7,17 @@
         <span class="h3">mixed by </span>
         <a [routerLink]="['/about']">{{mix.artist}}</a>
       </h4>
-      <a href="../../../assets/mp3/{{ mix.Mp3File }}" class="m-b-lg" target="_new">Download</a>
+      <p style="padding: 20px 0;">
+        <button (click)="playMix()" class="btn" target="_new" style="margin: 0 0 0 10px;"><i class="fa fa-headphones"></i>
+          Listen</button>
+        <button (click)="downloadMix()" class="btn m-b-lg" target="_new" style="margin: 0 0 0 10px;"><i class="fa fa-download"></i>
+          Download</button>
+      </p>
 
-      <br/>
-      <br/>
+
       <h3>{{ mix.CreateDate }}</h3>
       <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+
       <div class="row">
         <div class="col-xs-12">
           <a [routerLink]="['/mixes/' + mix.Category.toLowerCase()]">&lt;--back</a>
@@ -34,7 +35,7 @@
           </div>
         </div>
         <div class="col-md-3 col-xs-12">
-          <button (click)="playMix()" class="pull-right" target="_new">Listen</button>
+
         </div>
       </div>
       <div class="row">

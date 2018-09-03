@@ -33,7 +33,7 @@ i.fa:hover {
   left: 0;
   width: 100%;
   background: #1d1d1d;
-  border-top: 2px solid #1fae5b;
+  border-top: 2px solid #3071a9;
   z-index: 11;
 }
 
@@ -48,12 +48,12 @@ i.fa:hover {
 
 .player-control .controlling-options {
   display: inline-block;
-  width: 270px;
+  /* width: 270px; */
 }
 
 .player-control .controlling-options {
   display: inline-block;
-  width: 270px;
+  /* width: 270px; */
 }
 
 @media (min-width: 768px) {
@@ -64,8 +64,8 @@ i.fa:hover {
   }
 }
 .player-control .song-duration {
-  display: block;
-  width: 100%;
+  /* display: block; */
+  /* width: 100%; */
   margin-top: 10px;
   height: 12px;
 }

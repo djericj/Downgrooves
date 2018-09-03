@@ -4,13 +4,14 @@
 
       <img src="{{ album.artworkUrl100 | enlargeImage }}" class="img-responsive img-thumbnail m-b-lg" alt="{{ album.name }}">
 
-      <h4 class="m-b-lg">
+      <h4 class="m-b-lg" style="line-height: 44px;">
         <span class="h3">by </span>
         <a href="{{album.artistViewUrl}}">{{album.artistName}}</a>
       </h4>
 
-      <p>
-        <a href="{{ album.collectionViewUrl }}" target="_new">Buy on iTunes</a>
+      <p style="padding: 10px 0;">
+        <button class="btn" (click)="buy(album.collectionViewUrl);" target="_new"><i class="fa fa-shopping-cart"></i> Buy
+          on iTunes</button>
       </p>
 
       <h3>{{ formattedReleaseDate }}</h3>
@@ -31,9 +32,9 @@
             <ng-container *ngFor="let t of tracks">
               <tr *ngIf="t.trackName">
                 <td class="hover-text" style="width: 35px;">
-                  <button (click)="playTrack(t)">
+                  <button class="btn" (click)="playTrack(t)">
                     <!-- <i class="fa fa-play" style="font-size: 13px;"></i>  -->
-                    {{ t.trackNumber }}
+                    <span>{{ t.trackNumber }}</span>
                   </button>
                 </td>
                 <td class="hover-text">

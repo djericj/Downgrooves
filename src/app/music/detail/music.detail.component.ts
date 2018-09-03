@@ -30,6 +30,10 @@ export class MusicDetailComponent implements OnInit {
     this._playerService.play(t);
   }
 
+  buy(url: string) {
+    
+  }
+
   getDetail() {
     this._route.params.subscribe(params => {
       let collectionId = params["id"];

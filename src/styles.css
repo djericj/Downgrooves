@@ -415,7 +415,7 @@ header {
   background-size: 50%;
 }
 
-.player-region {
+/* .player-region {
   height: 100px;
   position: fixed;
   bottom: 0;
@@ -423,7 +423,7 @@ header {
   z-index: 1000;
   background-color: #000;
   width: 100%;
-}
+} */
 /************************************ state ************************************/
 
 /************************************ themes ************************************/

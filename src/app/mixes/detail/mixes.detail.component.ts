@@ -28,12 +28,13 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
     this.getDetail();
   }
 
-
   playMix() {
     //console.log(this.mix);
     let t = this._playerService.mixToPlayerTrack(this.mix);
     this._playerService.play(t);
   }
+  downloadMix() {}
+
   getDetail() {
     this._route.params.subscribe(params => {
       let name = params["name"];
