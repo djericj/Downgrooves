@@ -48,6 +48,7 @@ i.fa:hover {
 
 .player-control .controlling-options {
   display: inline-block;
+  width: 50%;
   /* width: 270px; */
 }
 
@@ -60,7 +61,7 @@ i.fa:hover {
   .player-control .song-duration {
     margin-top: 0;
     display: inline-block;
-    width: 50%;
+    width: 48%;
   }
 }
 .player-control .song-duration {
@@ -220,4 +221,10 @@ i.fa:hover {
   -webkit-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
+}
+
+div.btn:hover > i.fa {
+  color: #428bca;
+  opacity: 1;
+  transition: none;
 }

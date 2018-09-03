@@ -9,6 +9,7 @@ import * as $ from "jquery";
 })
 export class PlayerComponent implements OnInit {
   private isPlaying: boolean;
+  private volume;
   private playButton;
   private pauseButton;
   constructor(private _playerService: PlayerService) {
@@ -17,7 +18,9 @@ export class PlayerComponent implements OnInit {
     this.togglePlayPause();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getVolume();
+  }
 
   resume() {
     this.isPlaying = true;
@@ -28,7 +31,7 @@ export class PlayerComponent implements OnInit {
   pause() {
     this.isPlaying = false;
     this.togglePlayPause();
-   // this._playerService.pause();
+    // this._playerService.pause();
   }
 
   togglePlayPause() {
@@ -40,5 +43,23 @@ export class PlayerComponent implements OnInit {
       this.playButton.show();
       this.pauseButton.hide();
     }
+  }
+
+  turnUp() {
+    if (this.volume < 100) {
+      document.querySelector("audio").volume += 0.1;
+      this.getVolume();
+    }
+  }
+
+  turnDown() {
+    if (this.volume > 0) {
+      document.querySelector("audio").volume -= 0.1;
+      this.getVolume();
+    }
+  }
+
+  getVolume() {
+    this.volume = Math.round(document.querySelector("audio").volume * 100);
   }
 }

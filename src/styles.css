@@ -30,10 +30,6 @@ iframe {
   border: none;
   width: 100%;
 }
-i.fa:hover {
-  opacity: 0;
-  transition: all 0.5s;
-}
 
 a {
   color: #fff;
@@ -151,9 +147,12 @@ ul li {
 }
 
 button.btn,
-button.btn:hover {
+button.btn:hover,
+button.btn:focus {
   color: #fff;
   background-color: #333;
+  opacity: 1;
+  transition: none;
 }
 
 .btn {

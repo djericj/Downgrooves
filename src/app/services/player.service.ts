@@ -54,8 +54,8 @@ export class PlayerService {
   mixToPlayerTrack(mix: IMix) {
     if (mix) {
       return new PlayerTrack(
-        "mixed by " + mix.artist,
         mix.Name,
+        "mixed by " + mix.artist,
         "assets/images/mixes/" + mix.attachment,
         "assets/mp3/" + mix.Mp3File,
         mix.Length,

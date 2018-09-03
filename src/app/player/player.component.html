@@ -55,27 +55,27 @@
 					<!-- <div class="btn btn-noclick">
 						<span><span class="badge">{{ mediaPlayer.volume * 100 | number:0 }}%</span></span>
 					</div> -->
-					<div class="btn" onclick="document.getElementById('player2').volume -= .1">
-						<span><i class="fa fa-volume-down"></i></span>
+					<div class="btn" (click)="turnDown();">
+						<i class="fa fa-volume-down"></i>
 					</div>
-					<div class="btn btn-noclick">
-						<span><span class="badge">document.getElementById('player2').volume%</span></span>
+					<div class="btn btn-noclick" style="min-width: 80px;">
+						<span><span class="badge">{{volume}}%</span></span>
 					</div>
-					<div class="btn" onclick="document.getElementById('player2').volume += .1">
-						<span><i class="fa fa-volume-up"></i></span>
+					<div class="btn" (click)="turnUp();">
+						<i class="fa fa-volume-up"></i>
 					</div>
 					<div class="btn btn-noclick">
 						<span id="track-artist"> </span> - <span id="track-title"></span>
 					</div>
 				</div>
 
-				<!-- <div class="song-duration">
+				<div class="song-duration">
 					<span class="song-duration-beg">{{ mediaPlayer.formatTime }}</span>
 					<div class="progress" ng-click="mediaPlayer.seek(mediaPlayer.duration * generalPlaylist.seekPercentage($event))">
 						<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" ng-style="{ width: mediaPlayer.currentTime*100/mediaPlayer.duration + '%' }"></div>
 					</div>
 					<span class="song-duration-end">{{ mediaPlayer.formatDuration }}</span>
-				</div> -->
+				</div>
 
 			</div>
 
