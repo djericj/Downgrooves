@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { ITunesTrack } from "../services/interfaces";
+import { ITunesTrack, PlayerTrack } from "../services/interfaces";
 import { ITunesService } from "../services/itunes.service";
 import * as _ from "lodash";
 import { BaseComponent } from "../base/base.component";

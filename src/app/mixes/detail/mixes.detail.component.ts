@@ -27,22 +27,11 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
   ngOnInit() {
     this.getDetail();
   }
-  mixToPlayerTrack(mix: IMix) {
-    if (mix) {
-      return new PlayerTrack(
-        "mixed by " + this.mix.artist,
-        this.mix.Name,
-        this.mix.attachment,
-        "assets/mp3/" + this.mix.Mp3File,
-        this.mix.Length,
-        "assets/mp3/" + this.mix.Mp3File
-      );
-    }
-  }
+
 
   playMix() {
     console.log(this.mix);
-    let t = this.mixToPlayerTrack(this.mix);
+    let t = this._playerService.mixToPlayerTrack(this.mix);
     this._playerService.play(t);
   }
   getDetail() {

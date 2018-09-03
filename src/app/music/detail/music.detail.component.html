@@ -8,6 +8,7 @@
         <span class="h3">by </span>
         <a href="{{album.artistViewUrl}}">{{album.artistName}}</a>
       </h4>
+
       <p>
         <a href="{{ album.collectionViewUrl }}" target="_new">Buy on iTunes</a>
       </p>
@@ -30,10 +31,10 @@
             <ng-container *ngFor="let t of tracks">
               <tr *ngIf="t.trackName">
                 <td class="hover-text" style="width: 35px;">
-                  <a href="javascript:void();" (click)="_audioService.setAudio(t.previewUrl)">
+                  <button href="javascript:void();" (click)="playTrack(t)">
                     <!-- <i class="fa fa-play" style="font-size: 13px;"></i>  -->
                     {{ t.trackNumber }}
-                  </a>
+                  </button>
                 </td>
                 <td class="hover-text">
                   <strong>{{ t.trackCensoredName }}</strong>

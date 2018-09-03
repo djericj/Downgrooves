@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { PlayerTrack } from "./interfaces";
+import { PlayerTrack, IMix, ITunesTrack } from "./interfaces";
 
 @Injectable()
 export class PlayerService {
@@ -42,9 +42,31 @@ export class PlayerService {
   }
   setCover(track: PlayerTrack) {
     if (this.cover) {
-      this.cover.attr(
-        "src",
-        "http://localhost:4200/assets/images/mixes/" + track.cover
+      this.cover.attr("src", track.cover);
+    }
+  }
+  mixToPlayerTrack(mix: IMix) {
+    if (mix) {
+      return new PlayerTrack(
+        "mixed by " + mix.artist,
+        mix.Name,
+        mix.attachment,
+        "assets/mp3/" + mix.Mp3File,
+        mix.Length,
+        "assets/mp3/" + mix.Mp3File
+      );
+    }
+  }
+  trackToPlayerTrack(track: ITunesTrack) {
+    if (track) {
+      console.log(track);
+      return new PlayerTrack(
+        track.artistName,
+        track.trackCensoredName,
+        track.artworkUrl100,
+        track.previewUrl,
+        track.trackTimeMillis,
+        track.previewUrl
       );
     }
   }

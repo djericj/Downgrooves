@@ -44,6 +44,7 @@ export interface ITunesTrack {
   releaseDate: string;
   trackId: string;
   trackName: string;
+  trackCensoredName: string;
   trackNumber: string;
   trackPrice: string;
   trackTimeMillis: string;
