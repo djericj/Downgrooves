@@ -8,7 +8,6 @@ export class MixesService {
   constructor(private http: HttpClient) {}
 
   getMixes(): Observable<any> {
-    // get users from api
     return this.http
       .get("../../assets/mixes-db.json") //, options)
       .map((response: Response) => {
@@ -18,7 +17,7 @@ export class MixesService {
 
   getMix(name): Observable<IMix> {
     return this.getMixes().map(data => {
-      console.log(name.replace(/-/gi, " "));
+      //console.log(name.replace(/-/gi, " "));
       return data.find(
         (x: IMix) =>
           x.Name.toUpperCase() == name.toUpperCase().replace(/-/gi, " ")

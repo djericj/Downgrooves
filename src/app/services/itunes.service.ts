@@ -25,13 +25,13 @@ export class ITunesService {
   constructor(private http: HttpClient, private jsonp: Jsonp) {}
 
   getData(term: string) {
-    console.log("getData");
+    //console.log("getData");
     let apiURL = `${
       this.apiRoot
     }?term=${term}&limit=100&callback=JSONP_CALLBACK`;
     return this.jsonp.request(apiURL).subscribe(res => {
-      console.log("getData map");
-      console.log(res);
+      //console.log("getData map");
+      //console.log(res);
     });
   }
 

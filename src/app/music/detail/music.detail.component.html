@@ -31,7 +31,7 @@
             <ng-container *ngFor="let t of tracks">
               <tr *ngIf="t.trackName">
                 <td class="hover-text" style="width: 35px;">
-                  <button href="javascript:void();" (click)="playTrack(t)">
+                  <button (click)="playTrack(t)">
                     <!-- <i class="fa fa-play" style="font-size: 13px;"></i>  -->
                     {{ t.trackNumber }}
                   </button>

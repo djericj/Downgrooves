@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event: Event) => {
       switch (true) {
         case event instanceof NavigationEnd:
-          console.log(new Date());
+          //console.log(new Date());
           //this.app.bindEvents();
           layoutService.fixHeaderHeight();
           break;
@@ -29,22 +29,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.audioService.getPlayerStatus().subscribe(x => {
-      this.status = x;
-      this.handleStatusChanged();
-    });
+
   }
 
   // ngOnDestroy() {
   //   //this.audioService.getPlayerStatus().unsubscribe()
   // }
 
-  handleStatusChanged() {
-    //console.log('status');
-    //console.log(this.status);
-    if (this.status == "playing") {
-      this.track = this.audioService.currentTrack;
-      console.log(this.track);
-    }
-  }
 }

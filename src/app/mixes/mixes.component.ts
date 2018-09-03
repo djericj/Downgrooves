@@ -5,7 +5,6 @@ import { IMix } from "../services/interfaces";
 import { Title } from "@angular/platform-browser";
 import { BaseComponent } from "../base/base.component";
 import { Observable } from "../../../node_modules/rxjs";
-import * as $ from "jquery";
 
 @Component({
   selector: "app-mixes",
@@ -25,13 +24,7 @@ export class MixesComponent extends BaseComponent implements OnInit {
     super();
   }
   ngOnInit() {
-    //this.mixes = this.getMixCategory();
     this.mixes = this.getMixes("");
-    var player = $("#player2"); //console.log(player);
-    if (player) {
-      console.log(player.attr("id"));
-      console.log("found music player");
-    }
   }
 
   // getMixCategory(): Observable<IMix[]> {
@@ -41,7 +34,7 @@ export class MixesComponent extends BaseComponent implements OnInit {
   //   // });
   // }
 
-  getMixes(category): Observable<IMix[]> {
+  getMixes(category: string): Observable<IMix[]> {
     return this._mixesService.getMixes().map(
       // the first argument is a function which runs on success
       data => {

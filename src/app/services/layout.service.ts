@@ -10,7 +10,7 @@ export class LayoutService {
     var bodyHeight = $(window).outerHeight(),
       containerHeight = $(".inner-content").outerHeight(),
       headerHeight = $("header");
-    console.log(headerHeight);
+    //console.log(headerHeight);
     if (bodyHeight > containerHeight) {
       headerHeight.css("height", bodyHeight);
     } else {

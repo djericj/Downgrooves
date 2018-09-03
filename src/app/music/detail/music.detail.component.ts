@@ -39,7 +39,6 @@ export class MusicDetailComponent implements OnInit {
         this.formattedReleaseDate = moment_(this.album.trackTimeMillis).format(
           "MMM YYYY"
         );
-        console.log(this.tracks);
       });
     });
   }

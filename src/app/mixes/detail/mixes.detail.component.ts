@@ -30,7 +30,7 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
 
 
   playMix() {
-    console.log(this.mix);
+    //console.log(this.mix);
     let t = this._playerService.mixToPlayerTrack(this.mix);
     this._playerService.play(t);
   }
@@ -40,7 +40,7 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
       this._mixesService.getMix(name).subscribe(data => {
         this.mix = data;
         this.mix.CreateDate = moment_(this.mix.CreateDate).format("MMM YYYY");
-        console.log(this.mix);
+        //console.log(this.mix);
         this._titleService.setTitle(
           this.mix.Name +
             " mixed by " +

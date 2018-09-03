@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { PlayerTrack } from "../services/interfaces";
+import { PlayerService } from "../services/player.service";
 import * as $ from "jquery";
 
 @Component({
@@ -8,26 +8,37 @@ import * as $ from "jquery";
   styleUrls: ["./player.component.css"]
 })
 export class PlayerComponent implements OnInit {
-  public track: PlayerTrack;
-  public status: string;
-  paused: boolean;
+  private isPlaying: boolean;
+  private playButton;
+  private pauseButton;
+  constructor(private _playerService: PlayerService) {
+    this.playButton = $("#play-button");
+    this.pauseButton = $("#pause-button");
+    this.togglePlayPause();
+  }
 
-  mute: boolean;
+  ngOnInit() {}
 
-  currentPlaying: any;
+  resume() {
+    this.isPlaying = true;
+    this.togglePlayPause();
+    //this._playerService.resume();
+  }
 
-  currentTrackPostion: number;
-  currentTrackDuration: number;
-  currentTrackProgress: number;
-  volume: number;
+  pause() {
+    this.isPlaying = false;
+    this.togglePlayPause();
+   // this._playerService.pause();
+  }
 
-  // subscriptions
-  private _musicPlayerMuteSubscription: any;
-  private _musicPlayerTrackIdSubscription: any;
-  private _musicPlayerVolumeSubscription: any;
-  constructor() {}
-
-  ngOnInit() {
-    
+  togglePlayPause() {
+    if (this.isPlaying) {
+      this.playButton.hide();
+      this.pauseButton.show();
+    }
+    if (!this.isPlaying) {
+      this.playButton.show();
+      this.pauseButton.hide();
+    }
   }
 }

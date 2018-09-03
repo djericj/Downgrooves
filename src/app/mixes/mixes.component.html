@@ -21,12 +21,12 @@
 <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
   <ng-container *ngFor="let mix of mixes | async">
     <div class="grid-item {{mix.Category}} hover-bg item-img-wrap">
-        <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
-            <div class="hover-text">
-            <h4>{{mix.artist}} - {{mix.Name}}</h4>
-          </div>
-            <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}">
-        </a>
+      <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
+        <div class="hover-text">
+          <h4>{{mix.artist}} - {{mix.Name}}</h4>
+        </div>
+        <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}">
+      </a>
     </div>
   </ng-container>
 </div>

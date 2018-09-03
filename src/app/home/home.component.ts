@@ -38,7 +38,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
   getPosts(): void {
     this._facebookService.getPosts().subscribe(d => {
-      console.log(d.posts.data);
+      //console.log(d.posts.data);
       this.posts = d.posts.data;
     });
   }
