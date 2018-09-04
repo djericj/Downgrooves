@@ -70,11 +70,12 @@
 				</div>
 
 				<div class="song-duration">
-					<span class="song-duration-beg">{{ mediaPlayer.formatTime }}</span>
-					<div class="progress" ng-click="mediaPlayer.seek(mediaPlayer.duration * generalPlaylist.seekPercentage($event))">
-						<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" ng-style="{ width: mediaPlayer.currentTime*100/mediaPlayer.duration + '%' }"></div>
+					<span id="start-time" class="song-duration-beg"></span>
+					<progress id="seek-obj" class="progress" value="0" max="1" style="display:none;"></progress>
+					<div class="progress">
+						<div id="progress-bar" style="width: 0%;" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
-					<span class="song-duration-end">{{ mediaPlayer.formatDuration }}</span>
+					<span id="end-time" class="song-duration-end"></span>
 				</div>
 
 			</div>

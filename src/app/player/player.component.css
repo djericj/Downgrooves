@@ -48,7 +48,7 @@ i.fa:hover {
 
 .player-control .controlling-options {
   display: inline-block;
-  width: 50%;
+  width: 60%;
   /* width: 270px; */
 }
 
@@ -61,14 +61,14 @@ i.fa:hover {
   .player-control .song-duration {
     margin-top: 0;
     display: inline-block;
-    width: 48%;
+    width: 38%;
   }
 }
 .player-control .song-duration {
   /* display: block; */
   /* width: 100%; */
   margin-top: 10px;
-  height: 12px;
+  height: 18px;
 }
 
 .player-control .song-duration .song-duration-beg {
@@ -91,7 +91,7 @@ i.fa:hover {
   -ms-border-radius: 80px;
   -o-border-radius: 80px;
   border-radius: 80px;
-  margin-top: 7px;
+  margin-top: 12px;
   margin-bottom: 10px;
 }
 .player-control .btn {
