@@ -42,6 +42,7 @@ export class PlayerService {
       $("#mp3_src").attr("src", track.url);
       this.player.load();
       this.initProgressBar();
+      $("#player-region").show();
     }
   }
   setInfo(track: PlayerTrack) {

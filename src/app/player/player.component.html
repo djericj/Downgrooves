@@ -1,32 +1,4 @@
-<!-- <div class="player-region sm2-bar-ui full-width fixed">
-	<div style="float: left;">
-		<img id="cover" src="http://localhost:4200/assets/images/mixes/vocaldisc06.png" style="height: 100px;">
-	</div>
-	<div style="float: left;min-width: 30%;padding: 8px 20px 0;">
-		<h4 id="track-title">Title</h4>
-		<p id="track-artist">Artist</p>
-	</div>
-	<div id="player-controls" style="float: left;padding: 20px 0;">
-		<ul class="list-inline list-unstyled">
-			<li>
-				<button onclick="document.getElementById('player2').play()"><i class="fa fa-3x fa-play"></i></button>
-			</li>
-			<li>
-				<button onclick="document.getElementById('player2').pause()"><i class="fa fa-3x fa-pause"></i></button>
-			</li>
-		</ul>
-	</div>
-	<div style="float: left;">
-		<audio id="player2" preload="none" controls style="max-width:100%;">
-			<source id="mp3_src" src="" type="audio/mp3">
-		</audio>
-
-	</div>
-
-
-</div> -->
-
-<div class="player-region" ng-show="mediaPlayer.currentTrack">
+<div id="player-region" class="player-region">
 	<div>
 		<audio id="player2" preload="none">
 			<source id="mp3_src" src="" type="audio/mp3">

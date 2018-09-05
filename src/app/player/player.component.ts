@@ -20,6 +20,7 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit() {
     this.getVolume();
+    $("#player-region").hide();
   }
 
   resume() {

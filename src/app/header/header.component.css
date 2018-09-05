@@ -46,7 +46,6 @@ ul.menu {
   margin: 0;
 }
 
-
 ul.menu > li {
   list-style: none;
   position: relative;
@@ -92,7 +91,7 @@ ul.menu li a.active:after {
 /* Social */
 
 .social-box {
-  padding: 28px 24px 70px;
+  padding: 0 24px 0;
   overflow: hidden;
   position: absolute;
   bottom: 0px;
