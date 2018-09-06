@@ -5,6 +5,7 @@ import { IMix } from "../services/interfaces";
 import { Title } from "@angular/platform-browser";
 import { BaseComponent } from "../base/base.component";
 import { Observable } from "../../../node_modules/rxjs";
+import { IsotopeOptions } from "../../../node_modules/ngx-isotope";
 
 @Component({
   selector: "app-mixes",
@@ -25,6 +26,18 @@ export class MixesComponent extends BaseComponent implements OnInit {
   }
   ngOnInit() {
     this.mixes = this.getMixes("");
+    // var grid = $(".grid").isotope({
+    //   // filter element with numbers greater than 50
+    //   filter: function() {
+    //     // _this_ is the item element. Get text of element's .number
+    //     var number = $(this)
+    //       .find(".number")
+    //       .text();
+    //     // return true to show, false to hide
+    //     return parseInt(number, 10) > 50;
+    //   },
+    //   percentPosition: true
+    // });
   }
 
   // getMixCategory(): Observable<IMix[]> {
@@ -33,6 +46,11 @@ export class MixesComponent extends BaseComponent implements OnInit {
   //   //   return this.getMixes(category);
   //   // });
   // }
+
+  public isoOptions: IsotopeOptions = {
+    percentPosition: true,
+    itemSelector: ".grid-item"
+  };
 
   getMixes(category: string): Observable<IMix[]> {
     return this._mixesService.getMixes().map(

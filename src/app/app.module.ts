@@ -3,7 +3,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app.routes";
 import { HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
-import { HttpModule, JsonpModule, Jsonp, Response } from "@angular/http";
+import { HttpModule, JsonpModule } from "@angular/http";
+import { IsotopeModule } from "ngx-isotope";
 
 /* services */
 import { BrowserService } from "./services/browser.service";
@@ -66,7 +67,8 @@ import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
     HttpClientModule,
     HttpClientJsonpModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    IsotopeModule
   ],
   providers: [
     ITunesService,
