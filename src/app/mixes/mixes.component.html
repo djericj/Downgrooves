@@ -1,39 +1,15 @@
-<!-- <ul class="portfolioFilter">
-  <li><a href="#" data-filter="*" class="current">All</a></li>
-  <li>
-    <a href="#" data-filter=".vocal">Vocal</a>
-  </li>
-  <li>
-    <a href="#" data-filter=".progressive">Progressive</a>
-  </li>
-  <li>
-    <a href="#" data-filter=".classics">Classics</a>
-  </li>
-</ul> -->
-<!-- <div id="portfolio" class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
-  <div class="grid-sizer"></div>
-  <ng-container *ngFor="let mix of mixes | async">
-    <div class="grid-item {{mix.Category}} hover-bg item-img-wrap">
-      <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
-        <div class="hover-text">
-          <h4>{{mix.artist}} - {{mix.Name}}</h4>
-        </div>
-        <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}">
-      </a>
-    </div>
-  </ng-container>
-</div> -->
-
 <div id="portfolio" class="grid">
   <div class="grid-sizer"></div>
-  <isotope-grid *ngFor="let mix of mixes | async" [options]="isoOptions">
-    <isotope-item class="grid-item {{mix.Category}} hover-bg">
-      <a [routerLink]=" '/mix/' + [mix.Name | urlFormat] ">
-        <div class="hover-text ">
-          <h4>{{mix.artist}} - {{mix.Name}}</h4>
-        </div>
-        <img src="../../assets/images/mixes/{{mix.attachment}} " class="img-responsive " alt="{{ mix.attachment }} ">
-      </a>
-    </isotope-item>
+  <isotope-grid [options]="isoOptions">
+    <ng-container *ngFor="let mix of mixes | async">
+      <isotope-item class="grid-item {{mix.Category}} hover-bg">
+        <a [routerLink]=" '/mix/' + [mix.Name | urlFormat] ">
+          <div class="hover-text ">
+            <h4>{{mix.artist}} - {{mix.Name}}</h4>
+          </div>
+          <img src="../../assets/images/mixes/{{mix.attachment}} " class="img-responsive " alt="{{ mix.attachment }} ">
+        </a>
+      </isotope-item>
+    </ng-container>
   </isotope-grid>
 </div>

@@ -30,6 +30,7 @@
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
     "lodash": "^4.17.10",
+    "masonry": "0.0.2",
     "masonry-layout": "^4.2.2",
     "moment": "^2.22.2",
     "moment-duration-format": "^2.2.2",
