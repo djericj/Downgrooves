@@ -26,26 +26,51 @@ export class MixesComponent extends BaseComponent implements OnInit {
   }
   ngOnInit() {
     this.mixes = this.getMixes("");
-    // var grid = $(".grid").isotope({
-    //   // filter element with numbers greater than 50
-    //   filter: function() {
-    //     // _this_ is the item element. Get text of element's .number
-    //     var number = $(this)
-    //       .find(".number")
-    //       .text();
-    //     // return true to show, false to hide
-    //     return parseInt(number, 10) > 50;
-    //   },
-    //   percentPosition: true
-    // });
-  }
+    function getHashFilter() {
+      var hash = location.hash;
+      // get filter=filterName
+      var matches = location.hash.match(/filter=([^&]+)/i);
+      var hashFilter = matches && matches[1];
+      return hashFilter && decodeURIComponent(hashFilter);
+    }
 
-  // getMixCategory(): Observable<IMix[]> {
-  //   // return this._route.params.map(params => {
-  //   //   let category: string = params["category"];
-  //   //   return this.getMixes(category);
-  //   // });
-  // }
+    $(function() {
+      var $grid = $(".grid");
+
+      // bind filter button click
+      var $filters = $("#filters").on("click", "button", function() {
+        var filterAttr = $(this).attr("data-filter");
+        // set filter in hash
+        location.hash = "filter=" + encodeURIComponent(filterAttr);
+      });
+
+      var isIsotopeInit = false;
+
+      function onHashchange() {
+        var hashFilter = getHashFilter();
+        if (!hashFilter && isIsotopeInit) {
+          return;
+        }
+        isIsotopeInit = true;
+        // filter isotope
+        $grid.isotope({
+          itemSelector: ".grid-item",
+          filter: hashFilter
+        });
+        // set selected class on button
+        if (hashFilter) {
+          $filters.find(".is-checked").removeClass("is-checked");
+          $filters
+            .find('[data-filter="' + hashFilter + '"]')
+            .addClass("is-checked");
+        }
+      }
+
+      $(window).on("hashchange", onHashchange);
+      // trigger event handler to init Isotope
+      onHashchange();
+    });
+  }
 
   public isoOptions: IsotopeOptions = {
     percentPosition: true,
