@@ -1,24 +1,16 @@
-<!-- <div class="portfolio-box grid">
-  <div *ngFor="let mix of mixes | async">
-    <div class="col-sm-3 {{mix.Category}} grid-item">
-      <div class="hover-bg item-img-wrap">
-        <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
-          <div class="hover-text">
-            <h4>{{mix.artist}} - {{mix.Name}}</h4>
-          </div>
-          <li class="is-loading"><img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}"></li>
-        </a>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- <script>
-  $('.grid').isotope({
-    // options
-    itemSelector: '.grid-item',
-    layoutMode: 'fitRows'
-  });</script> -->
-<div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
+<!-- <ul class="portfolioFilter">
+  <li><a href="#" data-filter="*" class="current">All</a></li>
+  <li>
+    <a href="#" data-filter=".vocal">Vocal</a>
+  </li>
+  <li>
+    <a href="#" data-filter=".progressive">Progressive</a>
+  </li>
+  <li>
+    <a href="#" data-filter=".classics">Classics</a>
+  </li>
+</ul> -->
+<div id="portfolio" class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
   <ng-container *ngFor="let mix of mixes | async">
     <div class="grid-item {{mix.Category}} hover-bg item-img-wrap">
       <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
@@ -30,67 +22,3 @@
     </div>
   </ng-container>
 </div>
-<!-- <div class="portfolioFilter">
-
-  <a href="#" data-filter="*" class="current">All</a>
-  <a href="#" data-filter=".vocal">Vocal</a>
-  <a href="#" data-filter=".progressive">Progressive</a>
-  <a href="#" data-filter=".classics">Classics</a>
-
-</div>
-<div class="grid">
-  <div class="grid-item">...
-
-  </div>
-  <div class="grid-item grid-item--width2">...
-
-  </div>
-  <div class="grid-item">...
-
-  </div>
-</div> -->
-
-<!-- <div class="text-center">
-  <p class="lead" *ngIf="loading">
-    <app-loading></app-loading>
-  </p>
-</div>
-<div class="section-title" *ngIf="!loading">
-  <h2>Mixes</h2>
-  <p>Album-length DJ mixes from Mario and Eric J.</p>
-  <hr>
-</div>
-<div class="categories">
-  <ul class="cat">
-    <li>
-      <ol id="categories" class="type" ng-click="$event.preventDefault();">
-        <li>
-          <a [routerLink]="['/mixes']">All</a>
-        </li>
-        <li>
-          <a [routerLink]="['/mixes/progressive']">Progressive House</a>
-        </li>
-        <li>
-          <a [routerLink]="['/mixes/vocal']">Vocal</a>
-        </li>
-        <li>
-          <a [routerLink]="['/mixes/classics']">Classics</a>
-        </li>
-      </ol>
-    </li>
-  </ul>
-</div>
-
-<div class="row">
-  <div class="col-sm-6 col-md-3 col-lg-3" *ngFor="let mix of mixes">
-    <div class="portfolio-item {{mix.Category}}">
-      <div class="hover-bg">
-        <a [routerLink]="'/mix/' + [mix.Name | urlFormat]">
-          <div class="hover-text">
-            <h4>{{mix.artist}} - {{mix.Name}}</h4>
-          </div>
-          <img src="../../assets/images/mixes/{{mix.attachment}}" class="img-responsive" alt="{{ mix.attachment }}"> </a>
-      </div>
-    </div>
-  </div>
-</div> -->

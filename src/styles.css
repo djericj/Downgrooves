@@ -388,38 +388,6 @@ header {
   opacity: 1;
 }
 
-.itunes {
-  background-color: #615655;
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.itunes i {
-  top: 35%;
-  transform: translateY(-35%);
-}
-
-.beatport {
-  background-color: #000000;
-  grid-column: 1;
-  grid-row: 5;
-}
-
-.beatport img {
-  margin: 0 auto;
-  max-width: 50%;
-  position: relative;
-  top: 40%;
-  transform: translateY(-35%);
-}
-
-.fa-beatport {
-  background-image: url("assets/images/Beatport_Logo_Mark.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 50%;
-}
-
 /* .player-region {
   height: 100px;
   position: fixed;
