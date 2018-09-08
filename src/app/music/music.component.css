@@ -36,7 +36,7 @@ i.fa:hover {
     grid-template-columns: repeat(6, 250px);
     grid-template-rows: repeat(5, 250px);
   }
-
+  
   .info1,
   .info2,
   .info3 {

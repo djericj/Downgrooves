@@ -13,3 +13,16 @@ a {
 .grid-item--width2 {
   width: 50%;
 }
+
+@media (max-width: 768px) {
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid-sizer {
+    width: 50%;
+  }
+}

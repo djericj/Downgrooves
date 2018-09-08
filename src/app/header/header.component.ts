@@ -22,18 +22,15 @@ export class HeaderComponent implements OnInit {
         case event instanceof NavigationEnd:
           //console.log(new Date());
           //this.app.bindEvents();
-          layoutService.fixHeaderHeight();
+          //layoutService.fixHeaderHeight();
           break;
       }
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   // ngOnDestroy() {
   //   //this.audioService.getPlayerStatus().unsubscribe()
   // }
-
 }

@@ -1,24 +1,28 @@
 <main class="main">
-  <section [class.info1]="!error" [class.error-info1]="error">
-    <h2>Feed</h2>
-    <ng-template ngFor let-p [ngForOf]="posts | slice : 0 : 5">
+  <section class="info2">
+    <!-- <ng-template ngFor let-p [ngForOf]="posts | slice : 0 : 5">
+      <h2>Feed</h2>
       <p *ngIf="p?.message?.length">
         <a href="{{ p.permalink_url }}" target="_new">
           {{ p.message | removeUrls }}
         </a>
       </p>
+      <a href="#" class="info-link">from our facebook page...</a>
     </ng-template>
-    <a href="#" class="info-link">from our facebook page...</a>
+    <ng-template *ngIf="error">
+      <p>
+        {{ errorMessage }}
+      </p>
+    </ng-template> -->
   </section>
-  <section [class.info2]="!error" [class.error-info2]="error">
+  <section class="info1">
     <h2>Who we are</h2>
     <p>
       <strong>Downgrooves</strong> is a collaboration music project of recording artists
       <strong>Mario &amp; Eric J</strong> based out of Dallas, Texas.</p>
-    <a [routerLink]="['/about']" class="info-link">about us...</a>
   </section>
-  <section [class.info3]="!error" [class.error-info3]="error">
-    <hr/>
+  <section class="info3">
+    <!-- <hr/>
     <ng-template ngFor let-p [ngForOf]="posts | slice : 6">
       <p *ngIf="p?.message?.length">
         <a href="{{ p.permalink_url }}" target="_new">
@@ -26,7 +30,7 @@
         </a>
       </p>
     </ng-template>
-    <a href="#" class="info-link">Learn more...</a>
+    <a href="#" class="info-link">Learn more...</a> -->
   </section>
   <ng-container *ngIf="!error">
     <figure class="itunes portfolio-item">

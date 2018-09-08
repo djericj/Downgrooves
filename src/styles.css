@@ -90,6 +90,15 @@ ul li {
   display: none;
 }
 
+.navbar {
+  min-height: 0px;
+}
+
+.navbar-toggle {
+  padding: 0;
+  margin-right: 0;
+}
+
 /************************************ layout ************************************/
 #container {
   height: 100%;
@@ -134,7 +143,6 @@ ul li {
 #container.active {
   opacity: 1;
 }
-
 #content {
   position: absolute;
   left: 260px;
@@ -145,6 +153,26 @@ ul li {
   overflow-y: auto;
   right: 0;
   padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  #content {
+    left: 0;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  #content {
+    position: relative;
+  }
+  .info1 {
+    padding: 0 20px;
+    text-align: center;
+  }
+  h2 {
+    margin-top: 0px;
+  }
 }
 
 .inner-content {
@@ -179,6 +207,16 @@ header {
   text-align: left;
   z-index: 4;
   position: absolute;
+}
+
+@media (max-width: 400px) {
+  header {
+    position: relative;
+    float: none;
+    width: 100%;
+    text-align: center;
+    height: inherit;
+  }
 }
 
 .title {

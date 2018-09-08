@@ -1,126 +1,97 @@
 <header>
   <div class="logo-box logo">
+    <div class="hidden-sm hidden-xs">
+      <img src="../../assets/images/logo_w_title.png" class="img-responsive" />
+    </div>
 
-    <img src="../../assets/images/logo_w_title.png" class="img-responsive hidden-sm hidden-xs" />
-
-    <img src="../../assets/images/logo_w_title_only.png" class="img-responsive hidden-lg hidden-md" />
-  </div>
-
-  <!-- <a class="elemadded responsive-link" href="#">Menu</a> -->
-
-  <div class="menu-box" ng-app>
-    <ul class="menu" ng-click="$event.preventDefault();">
-      <li [routerLinkActive]="['active']">
-        <a [routerLink]="['']">
-          <i class="fa fa-home"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']">
-        <a [routerLink]="['about']">
-          <i class="fa fa-magic"></i>
-          <span>Who We Are</span>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']">
-        <a [routerLink]="['music']">
-          <i class="fa-music fa"></i>
-          <span>Music</span>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']">
-        <a [routerLink]="['remixes']">
-          <i class="fa-play fa"></i>
-          <span>Remixes</span>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']">
-        <a [routerLink]="['/mixes']">
-          <i class="fa fa-headphones"></i>
-          <span>DJ Sets</span>
-        </a>
-        <ul class="menu" style="padding-left: 34px;" ng-click="$event.preventDefault();">
-          <li [routerLinkActive]="['active']">
-            <a [routerLink]="['/mixes/progressive']">
-              <!-- <i class="fa fa-plane"></i> -->
-              <span>Progressive House</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLink]="['/mixes/vocal']">
-              <!-- <i class="fa fa-microphone"></i> -->
-              <span>Vocal</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLink]="['/mixes/classics']">
-              <!-- <i class="fa fa-history"></i> -->
-              <span>Classics</span>
-            </a>
-          </li>
-
-        </ul>
-      </li>
-
-      <li>
-        <a [routerLink]="['friends']">
-          <i class="fa fa-user-friends"></i>
-          <span>Friends</span>
-        </a>
-      </li>
-
-      <li>
-        <a [routerLink]="['shop']">
-          <i class="fa fa-shopping-bag"></i>
-          <span>Shop</span>
-        </a>
-      </li>
-
-      <li>
-        <a [routerLink]="['contact']">
-          <i class="fa fa-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li>
-
-    </ul>
-  </div>
-
-  <!-- Social icon -->
-  <div class="social-box">
-    <ul class="social-icons">
-      <li>
-        <a href="https://www.facebook.com/Downgrooves/" class="facebook">
-          <i class="fa fa-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://twitter.com/Downgrooves/" class="twitter">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.soundcloud.com/Downgrooves/" class="soundcloud">
-          <i class="fa fa-soundcloud"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.youtube.com/channel/UCBdt53d5ez75y32pzkqbTMw?view_as=subscriber" class="youtube">
-          <i class="fa fa-youtube"></i>
-        </a>
-      </li>
-    </ul>
-    <p class="copyright">&#169; 2018 Downgrooves, All Rights Reserved</p>
-  </div>
-
-  <div *ngIf="track">
-    <div class="player-image-region" [ngStyle]="{ 'background-image': 'url(' + track.thumbnail + ')'}">
-      <div class="song-info">
-        <div class="song-info__text">
-          <div class="song-info__title">{{track.artist}}</div>
-          <div>{{track.name}}</div>
-        </div>
+    <div class="hidden-lg hidden-md">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-2x fa-bars"></i>
+        </button>
+        <img src="../../assets/images/logo_w_title_only.png" class="img-responsive" style="width: 80%;" />
       </div>
     </div>
+
   </div>
+  <nav class="menu-box navbar" ng-app role="navigation">
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav menu" ng-click="$event.preventDefault();">
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['']">
+            <i class="fa fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['music']">
+            <i class="fa-music fa"></i>
+            <span>Music</span>
+          </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['remixes']">
+            <i class="fa-play fa"></i>
+            <span>Remixes</span>
+          </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/mixes']">
+            <i class="fa fa-headphones"></i>
+            <span>DJ Sets</span>
+          </a>
+          <ul class="menu" style="padding-left: 34px;" ng-click="$event.preventDefault();">
+            <li [routerLinkActive]="['active']">
+              <a [routerLink]="['/mixes/progressive']">
+                <!-- <i class="fa fa-plane"></i> -->
+                <span>Progressive House</span>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/mixes/vocal']">
+                <!-- <i class="fa fa-microphone"></i> -->
+                <span>Vocal</span>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/mixes/classics']">
+                <!-- <i class="fa fa-history"></i> -->
+                <span>Classics</span>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a [routerLink]="['friends']">
+            <i class="fa fa-user-friends"></i>
+            <span>Friends</span>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['shop']">
+            <i class="fa fa-shopping-bag"></i>
+            <span>Shop</span>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['contact']">
+            <i class="fa fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+
 </header>

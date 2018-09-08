@@ -1,11 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BaseComponent } from "../base/base.component";
 import { Title } from "@angular/platform-browser";
-import {
-  ITunesTrack,
-  FacebookPost,
-  FacebookData
-} from "../services/interfaces";
+import { ITunesTrack, FacebookPost } from "../services/interfaces";
 import { ITunesService } from "../services/itunes.service";
 import { FacebookService } from "../services/facebook.service";
 import * as _ from "lodash";
@@ -31,23 +27,28 @@ export class HomeComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getPosts();
+    //this.getPosts();
     this.tracks = this.getITunesData();
     this._titleService.setTitle(this._siteTitle);
   }
 
   getPosts(): void {
-    this._facebookService.getPosts().subscribe(d => {
-      //console.log(d.posts.data);
-      this.posts = d.posts.data;
-    });
+    this._facebookService.getPosts().subscribe(
+      d => {
+        this.posts = d.posts.data;
+      },
+      e => {
+        this.error = true;
+        this.errorMessage =
+          "Oops.  There was a problem connecting to the Facebook servers.";
+      }
+    );
   }
 
   getITunesData(): Observable<ITunesTrack[]> {
     return this._iTunesService.getITunesData("Downgrooves").map(
       data => {
-        return _
-          .uniqBy(data, "collectionId")
+        return _.uniqBy(data, "collectionId")
           .sort(
             (l, r): number => {
               if (l.releaseDate > r.releaseDate) return -1;

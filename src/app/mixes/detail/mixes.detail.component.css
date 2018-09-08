@@ -15,3 +15,14 @@ a {
   padding: 12px;
   font-size: 120%;
 }
+
+@media (max-width: 400px) {
+  .cover {
+    width: 50%;
+    float: left;
+  }
+  .tracklist {
+    font-size: 80%;
+    padding: 0 5px;
+  }
+}

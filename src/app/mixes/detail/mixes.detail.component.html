@@ -2,7 +2,7 @@
   <div class="row" style="padding-bottom: 30px;">
     <div class="col-md-4 text-right">
 
-      <img src="../../../assets/images/mixes/{{ mix.attachment }}" class="img-responsive img-thumbnail m-b-lg" alt="{{ mix.name }}">
+      <img src="../../../assets/images/mixes/{{ mix.attachment }}" class="cover img-responsive img-thumbnail m-b-lg" alt="{{ mix.name }}">
       <h4 class="m-b-lg">
         <span class="h3">mixed by </span>
         <a [routerLink]="['/about']">{{mix.artist}}</a>
@@ -10,7 +10,8 @@
       <p style="padding: 20px 0;">
         <button (click)="playMix()" class="btn" target="_new" style="margin: 0 0 0 10px;"><i class="fa fa-headphones"></i>
           Listen</button>
-        <button (click)="downloadMix()" class="btn m-b-lg" target="_new" style="margin: 0 0 0 10px;"><i class="fa fa-download"></i>
+        <button (click)="downloadMix()" class="btn m-b-lg hidden-xs hidden-sm" target="_new" style="margin: 0 0 0 10px;"><i
+            class="fa fa-download"></i>
           Download</button>
       </p>
 
@@ -28,7 +29,7 @@
       <div class="row">
         <div class="col-md-9 col-xs-12">
           <div class="hover-text">
-            <h1 class="pull-left">
+            <h1 class="pull-left" style="padding-left: 10px;">
               <strong>{{mix.Name}}</strong>
             </h1>
 
@@ -40,7 +41,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <table class="table">
+          <table class="table tracklist">
             <ng-container *ngFor="let t of mix.Tracks">
               <tr *ngIf="t.title">
                 <td class="hover-text" style="width: 35px;">
@@ -56,7 +57,7 @@
                   <p class="small hover-text">{{ t.artist }}</p>
                 </td>
                 <td>
-                  <span class="pull-right">
+                  <span class="pull-right music-label">
                     {{ t.label }}
                   </span>
                 </td>

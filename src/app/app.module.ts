@@ -36,6 +36,7 @@ import { EnlargeImagePipe } from "./pipes/enlarge-image.pipe";
 import { UrlFormatPipe } from "./pipes/url-format.pipe";
 import { RemoveUrlsPipe } from "./pipes/remove-urls.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
     MixesDetailComponent,
     LoadingComponent,
     RemixesComponent,
-    FriendsComponent
+    FriendsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
