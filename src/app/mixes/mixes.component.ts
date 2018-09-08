@@ -17,6 +17,7 @@ export class MixesComponent extends BaseComponent implements OnInit {
   public mixes: Observable<IMix[]>;
   public category: string;
   public loading: boolean;
+  public properTitle: string;
   constructor(
     private _route: ActivatedRoute,
     private _mixesService: MixesService,
@@ -25,7 +26,13 @@ export class MixesComponent extends BaseComponent implements OnInit {
     super();
   }
   ngOnInit() {
-    this.mixes = this.getMixes("");
+    this._route.params.subscribe(params => {
+      this.category = params["category"];
+      if (this.category === "") this.category = "progessive";
+      this.mixes = this.getMixes(this.category);
+      this.properTitle =
+        this.category.charAt(0).toUpperCase() + this.category.slice(1);
+    });
   }
 
   // getMixCategory(): Observable<IMix[]> {
@@ -56,7 +63,6 @@ export class MixesComponent extends BaseComponent implements OnInit {
           data = data.filter(x => {
             return x.Category.toUpperCase() == category.toUpperCase();
           });
-          this.category = category;
           this.titleService.setTitle(
             category.charAt(0).toUpperCase() +
               category.slice(1) +

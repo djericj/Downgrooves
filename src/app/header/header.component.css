@@ -55,6 +55,7 @@ ul.menu {
 ul.menu > li {
   list-style: none;
   position: relative;
+  width: 100%;
 }
 
 ul.menu > li > a,
@@ -94,3 +95,6 @@ ul.menu li a.active:after {
   width: 100%;
 }
 
+ul.nav li {
+  width: 100%;
+}

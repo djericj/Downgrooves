@@ -99,6 +99,10 @@ ul li {
   margin-right: 0;
 }
 
+.navbar-collapse {
+  padding: 0;
+}
+
 /************************************ layout ************************************/
 #container {
   height: 100%;
