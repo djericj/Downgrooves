@@ -23,6 +23,13 @@
   /* width: 270px; */
 }
 
+@media (max-width: 400px) {
+  .player-control .controlling-options {
+    width: 100%;
+    /* width: 270px; */
+  }
+}
+
 .player-control .controlling-options {
   display: inline-block;
   /* width: 270px; */

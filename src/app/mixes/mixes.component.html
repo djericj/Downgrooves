@@ -2,10 +2,13 @@
   <div class="grid">
     <div class="grid-sizer"></div>
     <isotope-grid [options]="isoOptions">
-      <isotope-item class="grid-item category">
-        <h2>{{properTitle}}</h2>
-        <p></p>
-      </isotope-item>
+      <ng-container class=" hidden-xs hidden-sm">
+        <isotope-item class="grid-item category">
+          <h2>{{properTitle}}</h2>
+          <p></p>
+        </isotope-item>
+      </ng-container>
+
       <ng-container *ngFor="let item of mixes | async">
         <isotope-item class="grid-item {{item.Category}} hover-bg">
           <a [routerLink]=" '/mix/' + [item.Name | urlFormat] ">

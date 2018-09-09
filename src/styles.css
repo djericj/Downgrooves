@@ -105,49 +105,15 @@ ul li {
 
 /************************************ layout ************************************/
 #container {
-  height: 100%;
   opacity: 0;
-  background: rgb(84, 208, 221);
-  /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(113, 119, 125, 1) 0%,
-    rgba(65, 74, 82, 1) 100%
-  );
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(113, 119, 125, 1) 0%,
-    rgba(65, 74, 82, 1) 100%
-  );
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(84, 208, 221, 1) 0%,
-    rgba(113, 119, 125, 1) 0%,
-    rgba(65, 74, 82, 1) 100%
-  );
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d0dd', endColorstr='#414a52', GradientType=0);
-  /* IE6-9 */
-  transition: all 0.17s ease-in-out;
-  -moz-transition: all 0.17s ease-in-out;
-  -webkit-transition: all 0.17s ease-in-out;
-  -o-transition: all 0.17s ease-in-out;
+  background: #555;
 }
 
 #container.active {
   opacity: 1;
 }
 #content {
+  background: #555;
   position: absolute;
   left: 260px;
   width: auto;
@@ -156,7 +122,6 @@ ul li {
   overflow-x: hidden;
   overflow-y: auto;
   right: 0;
-  padding-bottom: 100px;
 }
 
 @media (max-width: 768px) {
@@ -169,6 +134,7 @@ ul li {
 @media (max-width: 400px) {
   #content {
     position: relative;
+    top: 140px;
   }
   .info1 {
     padding: 0 20px;
@@ -181,7 +147,6 @@ ul li {
 
 .inner-content {
   height: 100%;
-  padding-bottom: 110px;
 }
 
 button.btn,
@@ -215,11 +180,11 @@ header {
 
 @media (max-width: 400px) {
   header {
-    position: relative;
+    position: fixed;
     float: none;
     width: 100%;
     text-align: center;
-    height: inherit;
+    height: 100px;
   }
 }
 
@@ -428,6 +393,25 @@ header {
 }
 .hover-bg:hover .hover-text {
   opacity: 1;
+}
+
+.back-button {
+  font-size: 80%;
+  float: left;
+  margin-left: 30px;
+}
+
+.track-number {
+  width: 35px;
+}
+@media (max-width: 400px) {
+  .track-number {
+    width: 50px;
+  }
+  .album-title {
+    font-size: 90%;
+    padding-bottom: 10px;
+  }
 }
 
 /* .player-region {
