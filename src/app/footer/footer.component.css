@@ -15,14 +15,14 @@ ul.social-icons {
   padding: 0;
   margin: 0;
 }
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   footer {
     position: fixed;
     height: 150px;
     bottom: 0px;
   }
   .social-box {
-    width: 400px;
+    width: 480px;
     background: #333;
   }
   ul.social-icons {

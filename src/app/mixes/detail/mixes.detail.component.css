@@ -16,7 +16,7 @@ a {
   font-size: 120%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .cover {
     width: 50%;
     float: left;

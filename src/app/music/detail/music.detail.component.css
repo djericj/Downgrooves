@@ -16,6 +16,32 @@ a {
   font-size: 120%;
 }
 
+@media (max-width: 480px) {
+  .cover {
+    width: 50%;
+    float: left;
+  }
+  .tracklist {
+    font-size: 80%;
+    padding: 0 5px;
+  }
+  .h3,
+  h3 {
+    font-size: 80%;
+  }
+  .mixed-by a {
+    font-size: 80%;
+  }
+  a,
+  .btn {
+    font-size: 80%;
+  }
+
+  .back-button {
+    margin-left: 23px;
+  }
+}
+
 .btn span {
   cursor: pointer;
   display: inline-block;

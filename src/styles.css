@@ -124,14 +124,14 @@ ul li {
   right: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   #content {
     left: 0;
     padding: 0 5px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   #content {
     position: relative;
     top: 140px;
@@ -178,7 +178,7 @@ header {
   position: absolute;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   header {
     position: fixed;
     float: none;
@@ -404,13 +404,18 @@ header {
 .track-number {
   width: 35px;
 }
-@media (max-width: 400px) {
+
+h4.album-title {
+  font-size: 180%;
+  padding: 20px 0;
+}
+
+@media (max-width: 480px) {
   .track-number {
     width: 50px;
   }
-  .album-title {
+  h4.album-title {
     font-size: 90%;
-    padding-bottom: 10px;
   }
 }
 

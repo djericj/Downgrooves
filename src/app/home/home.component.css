@@ -1,9 +1,17 @@
 /* grid styles ------------------------------------ */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   main {
     display: grid;
     grid-template-columns: repeat(6, 250px);
     grid-template-rows: repeat(5, 250px);
+  }
+
+  @media (max-width: 480px) {
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 250px);
+      grid-template-rows: repeat(5, 250px);
+    }
   }
 
   .info1 {

@@ -9,7 +9,7 @@ import * as $ from "jquery";
 })
 export class PlayerComponent implements OnInit {
   private isPlaying: boolean;
-  private volume;
+  public volume;
   private playButton;
   private pauseButton;
   constructor(private _playerService: PlayerService) {
