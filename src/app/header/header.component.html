@@ -20,37 +20,37 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav menu" ng-click="$event.preventDefault();">
         <li [routerLinkActive]="['active']">
-          <a [routerLink]="['']">
+          <a (click)="toggleCollapse()" [routerLink]="['']">
             <i class="fa fa-home"></i>
             <span>Home</span>
           </a>
         </li>
         <li [routerLinkActive]="['active']">
-          <a [routerLink]="['music']">
+          <a (click)="toggleCollapse()" [routerLink]="['music']">
             <i class="fa-music fa"></i>
             <span>Music</span>
           </a>
         </li>
         <li [routerLinkActive]="['active']">
-          <a [routerLink]="['remixes']">
+          <a (click)="toggleCollapse()" [routerLink]="['remixes']">
             <i class="fa-play fa"></i>
             <span>Remixes</span>
           </a>
         </li>
         <li [routerLinkActive]="['active']">
-          <a [routerLink]="['/mixes/progressive']">
+          <a (click)="toggleCollapse()" [routerLink]="['/mixes/progressive']">
             <i class="fa fa-plane"></i>
             <span>Progressive</span>
           </a>
         </li>
         <li>
-          <a [routerLink]="['/mixes/vocal']">
+          <a (click)="toggleCollapse()" [routerLink]="['/mixes/vocal']">
             <i class="fa fa-microphone"></i>
             <span>Vocal</span>
           </a>
         </li>
         <li>
-          <a [routerLink]="['/mixes/classics']">
+          <a (click)="toggleCollapse()" [routerLink]="['/mixes/classics']">
             <i class="fa fa-history"></i>
             <span>Classics</span>
           </a>
@@ -59,14 +59,14 @@
 
 
         <li>
-          <a [routerLink]="['shop']">
+          <a (click)="toggleCollapse()" [routerLink]="['shop']">
             <i class="fa fa-shopping-bag"></i>
             <span>Shop</span>
           </a>
         </li>
 
         <li>
-          <a [routerLink]="['contact']">
+          <a (click)="toggleCollapse()" [routerLink]="['contact']">
             <i class="fa fa-envelope"></i>
             <span>Contact</span>
           </a>

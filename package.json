@@ -25,6 +25,7 @@
     "@types/isotope-layout": "^3.0.4",
     "@types/lodash": "^4.14.109",
     "@types/soundmanager2": "^2.97.1",
+    "aws-sdk": "^2.315.0",
     "core-js": "^2.4.1",
     "g": "^2.0.1",
     "imagesloaded": "^4.1.4",
@@ -37,6 +38,7 @@
     "moment-duration-format": "^2.2.2",
     "ngx-isotope": "^0.1.7",
     "rxjs": "^5.5.6",
+    "vs-deploy": "^13.0.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

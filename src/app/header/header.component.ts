@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer, ElementRef } from "@angular/core";
 import { Event, Router, NavigationEnd } from "@angular/router";
 import { AudioService } from "../services/audio.service";
 import { LayoutService } from "../services/layout.service";
@@ -11,11 +11,12 @@ import { LayoutService } from "../services/layout.service";
 export class HeaderComponent implements OnInit {
   status: string;
   track: any;
+  show: boolean = false;
 
   constructor(
     private router: Router,
-    private audioService: AudioService,
-    private layoutService: LayoutService
+    private el: ElementRef,
+    private renderer: Renderer
   ) {
     this.router.events.subscribe((event: Event) => {
       switch (true) {
@@ -33,4 +34,13 @@ export class HeaderComponent implements OnInit {
   // ngOnDestroy() {
   //   //this.audioService.getPlayerStatus().unsubscribe()
   // }
+
+  toggleCollapse() {
+    this.show = !this.show;
+    this.renderer.setElementClass(
+      this.el.nativeElement.querySelector("#navbar"),
+      "show",
+      false
+    );
+  }
 }

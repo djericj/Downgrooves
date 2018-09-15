@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/.mp3": true
+  },
+  "deploy": {
+    "targets": [
+      {
+        "type": "s3bucket",
+        "name": "www.downgrooves.com",
+        "bucket": "www.downgrooves.com"
+      }
+    ]
+  }
+}
