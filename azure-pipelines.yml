@@ -1,4 +1,24 @@
 # Starter pipeline
+- task: Npm@1
+  inputs:
+    command: 'install @angular/cli -g'
+- task: Npm@2
+  inputs:
+    command: 'install'
+- task: Npm@3
+  inputs:
+    command: 'ng build install'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)/dist'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'downgrooves - 1 - Azure'
+    appType: 'webApp'
+    WebAppName: 'Downgrooves'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/dist'
+    artifact: 'dist'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
