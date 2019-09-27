@@ -18,8 +18,10 @@
   <section class="info1">
     <h2>Who we are</h2>
     <p>
-      <strong>Downgrooves</strong> is a collaboration music project of recording artists
-      <strong>Mario &amp; Eric Rylos</strong> based out of Dallas, Texas.</p>
+      <strong>Downgrooves</strong> is a collaboration music project of recording
+      artists <strong>Mario &amp; Eric Rylos</strong> based out of Dallas,
+      Texas.
+    </p>
   </section>
   <section class="info3">
     <!-- <hr/>
@@ -35,7 +37,10 @@
   <ng-container *ngIf="!error">
     <figure class="itunes portfolio-item">
       <section class="hover-bg">
-        <a href="https://itunes.apple.com/us/artist/downgrooves/570186506" target="_new">
+        <a
+          href="https://itunes.apple.com/us/artist/downgrooves/570186506"
+          target="_new"
+        >
           <div class="hover-text">
             <h4>find us on itunes</h4>
           </div>
@@ -45,7 +50,10 @@
     </figure>
     <figure class="beatport portfolio-item">
       <section class="hover-bg">
-        <a href="https://www.beatport.com/artist/downgrooves/293260" target="_new">
+        <a
+          href="https://www.beatport.com/artist/downgrooves/293260"
+          target="_new"
+        >
           <div class="hover-text">
             <h4>find us on beatport</h4>
           </div>
@@ -53,13 +61,23 @@
         </a>
       </section>
     </figure>
-    <figure class="figure{{i}}" *ngFor="let track of tracks | async; index as i" [attr.data-index]="i">
-      <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
-
-        <img class="figure-img" src="{{ track.artworkUrl100 | enlargeImage }}" alt="{{ track.trackCensoredName }}">
+    <figure
+      class="figure{{ i }}"
+      *ngFor="let track of tracks; index as i"
+      [attr.data-index]="i"
+    >
+      <a
+        [routerLink]="[
+          '/music/' + track.collectionId,
+          track.trackCensoredName | urlFormat
+        ]"
+      >
+        <img
+          class="figure-img"
+          src="{{ track.artworkUrl100 | enlargeImage }}"
+          alt="{{ track.trackCensoredName }}"
+        />
       </a>
     </figure>
   </ng-container>
-
-
 </main>
