@@ -29,8 +29,8 @@ export class HomeComponent extends BaseComponent implements OnInit {
       .getITunesData("collectionId")
       .subscribe((data: ITunesTrack[]) => {
         this.tracks = data;
-        console.log(data);
-        console.log(this.tracks);
+        //console.log(data);
+        //console.log(this.tracks);
       });
     this._titleService.setTitle(this._siteTitle);
   }
@@ -51,7 +51,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
         this.error = true;
         if (err.error instanceof Error) {
           this.errorMessage = err.error.message;
-          console.log("An error occurred:", err.error.message);
+          //console.log("An error occurred:", err.error.message);
         } else {
           //this.errorMessage = err;
           //console.log(err);

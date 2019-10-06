@@ -43,7 +43,7 @@ export class ITunesService {
         this.error = true;
         if (err.error instanceof Error) {
           this.errorMessage = err.error.message;
-          console.log(this.errorMessage);
+          //console.log(this.errorMessage);
         }
       }
     );

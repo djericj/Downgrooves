@@ -15,7 +15,7 @@ export class PlayerService {
 
   play(track: PlayerTrack) {
     this.player = <HTMLAudioElement>document.getElementById("player2");
-    console.log(this.player);
+    //console.log(this.player);
     if (this.player) {
       //console.log(track);
       this.pause();
@@ -138,7 +138,7 @@ export class PlayerService {
       var progressbar = <HTMLProgressElement>(
         document.getElementById("seek-obj")
       );
-      console.log(progressbar.value.toFixed());
+      //console.log(progressbar.value.toFixed());
       document.getElementById(
         "end-time"
       ).innerHTML = progressbar.value.toFixed();
