@@ -3,33 +3,48 @@
     <h2>Original Tracks</h2>
     <p>Music created by Downgrooves</p>
   </section>
-  <section class="info2" *ngIf="!error">
-
-  </section>
-  <section class="info3" *ngIf="!error">
-
-  </section>
+  <section class="info2" *ngIf="!error"></section>
+  <section class="info3" *ngIf="!error"></section>
   <ng-container *ngIf="!error">
-    <figure class="figure{{i}}" *ngFor="let track of tracks | async; index as i" [attr.data-index]="i">
-      <a [routerLink]="['/music/' + track.collectionId, track.trackCensoredName | urlFormat]">
+    <figure
+      class="figure{{ i }}"
+      *ngFor="let track of tracks | async; index as i"
+      [attr.data-index]="i"
+    >
+      <a
+        [routerLink]="[
+          '/music/' + track.collectionId,
+          track.trackCensoredName | urlFormat
+        ]"
+        data-cy="track"
+      >
         <!-- <div class="hover-text">
         <h4>{{ track.artistName }}
           <br/> {{ track.trackCensoredName }}</h4>
       </div> -->
-        <img class="figure-img" src="{{ track.artworkUrl100 | enlargeImage }}" alt="{{ track.trackCensoredName }}">
+        <img
+          class="figure-img"
+          src="{{ track.artworkUrl100 | enlargeImage }}"
+          alt="{{ track.trackCensoredName }}"
+        />
       </a>
     </figure>
   </ng-container>
   <ng-container *ngIf="error">
     <section class="error-info">
       <h2>Oops, we could not contact the Apple iTunes servers</h2>
-      <p>The iTunes servers appear to be down right now. </p>
-      <p>While we wait for them to come up, check out some of our music on
-        <a href="https://www.beatport.com/artist/downgrooves/293260" target="_new">Beatport</a>.</p>
+      <p>The iTunes servers appear to be down right now.</p>
+      <p>
+        While we wait for them to come up, check out some of our music on
+        <a
+          href="https://www.beatport.com/artist/downgrooves/293260"
+          target="_new"
+          >Beatport</a
+        >.
+      </p>
     </section>
   </ng-container>
 </main>
-
 
 <!-- <div class="section-title">
   <h2>Original Tracks</h2>

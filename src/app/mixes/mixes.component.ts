@@ -28,7 +28,9 @@ export class MixesComponent extends BaseComponent implements OnInit {
   ngOnInit() {
     this._route.params.subscribe(params => {
       this.category = params["category"];
-      if (this.category === "") this.category = "progessive";
+      if (this.category === "") {
+        this.category = "progessive";
+      }
       this.mixes = this.getMixes(this.category);
       this.properTitle =
         this.category.charAt(0).toUpperCase() + this.category.slice(1);
@@ -52,13 +54,15 @@ export class MixesComponent extends BaseComponent implements OnInit {
       // the first argument is a function which runs on success
       data => {
         this.titleService.setTitle("DJ Mixes | Downgrooves Electronic Music");
-        data.sort(
-          (l, r): number => {
-            if (l.CreateDate > r.CreateDate) return -1;
-            if (l.CreateDate < r.CreateDate) return 1;
-            return 0;
+        data.sort((l, r): number => {
+          if (l.CreateDate > r.CreateDate) {
+            return -1;
           }
-        );
+          if (l.CreateDate < r.CreateDate) {
+            return 1;
+          }
+          return 0;
+        });
         if (category) {
           data = data.filter(x => {
             return x.Category.toUpperCase() == category.toUpperCase();

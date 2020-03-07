@@ -7,7 +7,7 @@ export class LayoutService {
   constructor() {}
 
   fixHeaderHeight() {
-    var bodyHeight = $(window).outerHeight(),
+    const bodyHeight = $(window).outerHeight(),
       containerHeight = $(".inner-content").outerHeight(),
       headerHeight = $("header");
     //console.log(headerHeight);

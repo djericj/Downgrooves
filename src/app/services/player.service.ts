@@ -83,20 +83,20 @@ export class PlayerService {
   }
 
   initProgressBar() {
-    var player = <HTMLAudioElement>document.getElementById("player2");
-    var length = player.duration;
-    var current_time = player.currentTime;
-    var progressbar = <HTMLProgressElement>document.getElementById("seek-obj");
+    let player = <HTMLAudioElement>document.getElementById("player2");
+    let length = player.duration;
+    let current_time = player.currentTime;
+    let progressbar = <HTMLProgressElement>document.getElementById("seek-obj");
 
     player.addEventListener("loadedmetadata", function() {
-      var totalLength = formatTime(player.duration);
+      let totalLength = formatTime(player.duration);
       document.getElementById("end-time").innerHTML = totalLength;
     });
 
     player.addEventListener("timeupdate", function() {
-      var currentTime = formatTime(player.currentTime);
+      let currentTime = formatTime(player.currentTime);
       document.getElementById("start-time").innerHTML = currentTime;
-      var pct = player.currentTime / player.duration;
+      let pct = player.currentTime / player.duration;
       document.getElementById("progress-bar").style.width =
         (pct * 100).toFixed() + "%";
       //console.log(player.currentTime / player.duration);
@@ -135,7 +135,7 @@ export class PlayerService {
     }
 
     function prog() {
-      var progressbar = <HTMLProgressElement>(
+      let progressbar = <HTMLProgressElement>(
         document.getElementById("seek-obj")
       );
       //console.log(progressbar.value.toFixed());
@@ -145,7 +145,7 @@ export class PlayerService {
     }
 
     function seek(event) {
-      var percent = event.offsetX / this.offsetWidth;
+      let percent = event.offsetX / this.offsetWidth;
       player.currentTime = percent * player.duration;
       progressbar.value = percent / 100;
     }

@@ -6,15 +6,24 @@
 
     <div class="hidden-lg hidden-md">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-          aria-expanded="false" aria-controls="navbar">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-expanded="false"
+          aria-controls="navbar"
+        >
           <span class="sr-only">Toggle navigation</span>
           <i class="fa fa-2x fa-bars"></i>
         </button>
-        <img src="../../assets/images/logo_w_title_only.png" class="img-responsive" style="width: 80%;" />
+        <img
+          src="../../assets/images/logo_w_title_only.png"
+          class="img-responsive"
+          style="width: 80%;"
+        />
       </div>
     </div>
-
   </div>
   <nav class="menu-box navbar" ng-app role="navigation">
     <div id="navbar" class="collapse navbar-collapse">
@@ -26,58 +35,74 @@
           </a>
         </li>
         <li [routerLinkActive]="['active']">
-          <a (click)="toggleCollapse()" [routerLink]="['music']">
+          <a
+            (click)="toggleCollapse()"
+            [routerLink]="['music']"
+            data-cy="music"
+          >
             <i class="fa-music fa"></i>
             <span>Music</span>
           </a>
         </li>
         <li [routerLinkActive]="['active']">
-          <a (click)="toggleCollapse()" [routerLink]="['remixes']">
+          <a
+            (click)="toggleCollapse()"
+            [routerLink]="['remixes']"
+            data-cy="remixes"
+          >
             <i class="fa-play fa"></i>
             <span>Remixes</span>
           </a>
         </li>
         <li [routerLinkActive]="['active']">
-          <a (click)="toggleCollapse()" [routerLink]="['/mixes/progressive']">
+          <a
+            (click)="toggleCollapse()"
+            [routerLink]="['/mixes/progressive']"
+            data-cy="progressive"
+          >
             <i class="fa fa-plane"></i>
             <span>Progressive</span>
           </a>
         </li>
         <li>
-          <a (click)="toggleCollapse()" [routerLink]="['/mixes/vocal']">
+          <a
+            (click)="toggleCollapse()"
+            [routerLink]="['/mixes/vocal']"
+            data-cy="vocal"
+          >
             <i class="fa fa-microphone"></i>
             <span>Vocal</span>
           </a>
         </li>
         <li>
-          <a (click)="toggleCollapse()" [routerLink]="['/mixes/classics']">
+          <a
+            (click)="toggleCollapse()"
+            [routerLink]="['/mixes/classics']"
+            data-cy="classics"
+          >
             <i class="fa fa-history"></i>
             <span>Classics</span>
           </a>
         </li>
 
-
-
         <li>
-          <a (click)="toggleCollapse()" [routerLink]="['shop']">
+          <a (click)="toggleCollapse()" [routerLink]="['shop']" data-cy="shop">
             <i class="fa fa-shopping-bag"></i>
             <span>Shop</span>
           </a>
         </li>
 
         <li>
-          <a (click)="toggleCollapse()" [routerLink]="['contact']">
+          <a
+            (click)="toggleCollapse()"
+            [routerLink]="['contact']"
+            data-cy="contact"
+          >
             <i class="fa fa-envelope"></i>
             <span>Contact</span>
           </a>
         </li>
-
       </ul>
-
     </div>
-
   </nav>
-
-
-
 </header>

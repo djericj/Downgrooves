@@ -26,17 +26,15 @@ export class MusicDetailComponent implements OnInit {
   }
 
   playTrack(track: ITunesTrack) {
-    let t = this._playerService.trackToPlayerTrack(track);
+    const t = this._playerService.trackToPlayerTrack(track);
     this._playerService.play(t);
   }
 
-  buy(url: string) {
-    
-  }
+  buy(url: string) {}
 
   getDetail() {
     this._route.params.subscribe(params => {
-      let collectionId = params["id"];
+      const collectionId = params["id"];
       this._iTunesService.getAlbum(collectionId).subscribe(data => {
         this.tracks = data.results.filter(x => x.kind == "song");
         this.album = data.results[0];

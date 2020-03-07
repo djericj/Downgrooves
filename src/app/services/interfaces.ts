@@ -164,10 +164,10 @@ export namespace Convert {
       return typ.hasOwnProperty("unionMembers")
         ? isValidUnion(typ.unionMembers, val)
         : typ.hasOwnProperty("arrayItems")
-          ? isValidArray(typ.arrayItems, val)
-          : typ.hasOwnProperty("props")
-            ? isValidObject(typ.props, typ.additional, val)
-            : false;
+        ? isValidArray(typ.arrayItems, val)
+        : typ.hasOwnProperty("props")
+        ? isValidObject(typ.props, typ.additional, val)
+        : false;
     }
     return isValidPrimitive(typ, val);
   }

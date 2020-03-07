@@ -16,15 +16,11 @@ export class FacebookService {
   constructor(private http: HttpClient) {}
 
   getPosts(): Observable<FacebookSearchResponse> {
-    let apiURL = `${this.url}${this.access_token}`;
+    const apiURL = `${this.url}${this.access_token}`;
     return this.http.get<FacebookSearchResponse>(apiURL);
   }
 
   refreshAccessToken() {
-    var url = `https://graph.facebook.com/oauth/access_token?client_id=${
-      this.app_id
-    }&client_secret=${
-      this.app_secret
-    }&grant_type=fb_exchange_token&fb_exchange_token=${this.access_token}`;
+    let url = `https://graph.facebook.com/oauth/access_token?client_id=${this.app_id}&client_secret=${this.app_secret}&grant_type=fb_exchange_token&fb_exchange_token=${this.access_token}`;
   }
 }
