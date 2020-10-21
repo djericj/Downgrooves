@@ -37,7 +37,8 @@ import { UrlFormatPipe } from "./pipes/url-format.pipe";
 import { RemoveUrlsPipe } from "./pipes/remove-urls.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
 import { FooterComponent } from "./footer/footer.component";
-import { ModularComponent } from './modular/modular.component';
+import { ModularComponent } from "./modular/modular.component";
+import { ModularService } from "./services/modular.service";
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { ModularComponent } from './modular/modular.component';
     FacebookService,
     LayoutService,
     PlayerService,
+    ModularService,
   ],
   bootstrap: [AppComponent],
 })

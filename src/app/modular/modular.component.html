@@ -1,3 +1,55 @@
-<p>
-  modular works!
-</p>
+<div id="portfolio">
+  <div class="grid">
+    <div class="grid-sizer"></div>
+    <isotope-grid [options]="isoOptions">
+      <ng-container class="hidden-xs hidden-sm">
+        <isotope-item class="grid-item category">
+          <h2>Live Modular Performances</h2>
+          <p></p>
+        </isotope-item>
+      </ng-container>
+
+      <ng-container *ngFor="let v of videos.items">
+        <isotope-item class="grid-item hover-bg">
+          <a
+            [href]="'https://youtu.be/' + v.snippet.resourceId.videoId"
+            target="_new"
+          >
+            <div class="hover-text">
+              <h4>{{ v.snippet.title.substring(0, 40) }}</h4>
+            </div>
+            <img
+              [src]="v.snippet.thumbnails.medium.url"
+              class="img-responsive"
+            />
+          </a>
+        </isotope-item>
+      </ng-container>
+    </isotope-grid>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-auto" *ngFor="let v of videos.default.items">
+      <img
+        class="card-img-top"
+        [src]="v.snippet.thumbnails.medium.url"
+        alt="Card image cap"
+      />
+      <div class="card-body" style="position: relative">
+        <h5 class="card-title">{{ v.snippet.title.substring(0, 40) }}</h5>
+        <p class="card-text" style="margin-bottom: 50px">
+          {{ v.snippet.description.substring(0, 65) }}
+        </p>
+        <a
+          [href]="'https://youtu.be/' + v.snippet.resourceId.videoId"
+          class="btn btn-primary"
+          style="position: absolute; bottom: 5%"
+          target="_new"
+          >Watch</a
+        >
+      </div>
+    </div>
+  </div>
+</div> -->
