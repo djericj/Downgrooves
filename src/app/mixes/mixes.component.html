@@ -2,23 +2,54 @@
   <div class="grid">
     <div class="grid-sizer"></div>
     <isotope-grid [options]="isoOptions">
-      <ng-container class=" hidden-xs hidden-sm">
+      <ng-container class="hidden-xs hidden-sm">
         <isotope-item class="grid-item category">
-          <h2>{{properTitle}}</h2>
+          <h2>Vocal Trance</h2>
           <p></p>
         </isotope-item>
       </ng-container>
 
       <ng-container *ngFor="let item of mixes | async">
-        <isotope-item class="grid-item {{item.Category}} hover-bg">
-          <a [routerLink]=" '/mix/' + [item.Name | urlFormat] ">
-            <div class="hover-text ">
-              <h4>{{item.artist}} - {{item.Name}}</h4>
+        <isotope-item class="grid-item {{ item.Category }} hover-bg">
+          <a [routerLink]="'/mix/' + [item.Name | urlFormat]">
+            <div class="hover-text">
+              <h4>{{ item.artist }} - {{ item.Name }}</h4>
             </div>
-            <img src="../../assets/images/mixes/{{item.attachment}} " class="img-responsive " alt="{{ item.attachment }} ">
+            <img
+              src="../../assets/images/mixes/{{ item.attachment }} "
+              class="img-responsive"
+              alt="{{ item.attachment }} "
+            />
           </a>
         </isotope-item>
       </ng-container>
     </isotope-grid>
   </div>
+</div>
+<p>&nbsp;</p>
+<div class="grid">
+  <div class="grid-sizer"></div>
+  <isotope-grid [options]="isoOptions">
+    <ng-container class="hidden-xs hidden-sm">
+      <isotope-item class="grid-item category">
+        <h2>Vinyl Classics</h2>
+        <p></p>
+      </isotope-item>
+    </ng-container>
+
+    <ng-container *ngFor="let item of mixes2 | async">
+      <isotope-item class="grid-item {{ item.Category }} hover-bg">
+        <a [routerLink]="'/mix/' + [item.Name | urlFormat]">
+          <div class="hover-text">
+            <h4>{{ item.artist }} - {{ item.Name }}</h4>
+          </div>
+          <img
+            src="../../assets/images/mixes/{{ item.attachment }} "
+            class="img-responsive"
+            alt="{{ item.attachment }} "
+          />
+        </a>
+      </isotope-item>
+    </ng-container>
+  </isotope-grid>
 </div>

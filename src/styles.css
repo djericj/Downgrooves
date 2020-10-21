@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 /*************************************** base ********************************/
+
+html {
+  background: url(/assets/pavel-pjatakov-rywx3yUFaa0-unsplash.jpg) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/pavel-pjatakov-rywx3yUFaa0-unsplash.jpg', sizingMethod='scale')";
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./assets/pavel-pjatakov-rywx3yUFaa0-unsplash.jpg', sizingMethod='scale');
+}
+
 html,
 body {
   height: 100%;
@@ -10,8 +22,8 @@ body {
   font-weight: 400;
   font-size: 18px;
   color: #fff;
-  background-color: #333 !important;
-  max-width: 1600px;
+  background-color: #555;
+  opacity: 0.95;
 }
 
 *,
@@ -106,7 +118,7 @@ ul li {
 /************************************ layout ************************************/
 #container {
   opacity: 0;
-  background: #555;
+  background: transparent;
 }
 
 #container.active {
@@ -114,6 +126,7 @@ ul li {
 }
 #content {
   background: #555;
+  opacity: 0.9;
   position: absolute;
   left: 260px;
   width: auto;
@@ -122,6 +135,7 @@ ul li {
   overflow-x: hidden;
   overflow-y: auto;
   right: 0;
+  max-width: 1600px;
 }
 
 @media (max-width: 480px) {
@@ -438,4 +452,26 @@ div.filter-box ul li a:hover,
 div.filter-box ul li a.active,
 a.elemadded {
   background-color: #336699 !important;
+}
+.list-inline {
+  display: flex;
+}
+
+.list-inline li {
+  flex: 1;
+
+  text-align: center;
+}
+
+.list-inline li a {
+  opacity: 0.7;
+  background-color: transparent;
+}
+.list-inline li a:hover {
+  opacity: 1;
+  color: #fff;
+}
+.list-inline li a i:hover {
+  opacity: 1;
+  color: #fff;
 }

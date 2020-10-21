@@ -62,37 +62,40 @@ i.fa:hover {
     background-color: #00c7f7;
     grid-row: 2;
   }
-  .soundcloud {
-    background-color: #ff6600;
-    grid-column: 2 / span 2;
-    grid-row: 3;
-  }
-  .youtube {
-    background-color: #dd4a38;
-    grid-column: 1;
-    grid-row: 3;
-  }
 
   .available {
     background-color: #335397;
     justify-self: center;
     align-self: center;
   }
-  .itunes {
-    background-color: #6aaaeb;
+
+  .spotify {
+    background-color: #000000;
     grid-column: 2;
     grid-row: 2;
   }
 
-  .itunes i {
-    top: 30%;
-    transform: translateY(-35%);
+  .soundcloud {
+    background-color: #ff6600;
+    grid-column: 3;
+    grid-row: 2;
   }
 
   .beatport {
     background-color: #000000;
-    grid-column: 3;
-    grid-row: 2;
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .youtube {
+    background-color: #dd4a38;
+    grid-column: 2 / span 2;
+    grid-row: 3;
+  }
+
+  .spotify i {
+    top: 30%;
+    transform: translateY(-35%);
   }
 
   .beatport img {
@@ -105,6 +108,20 @@ i.fa:hover {
 
   .fa-beatport {
     background-image: url("../../assets/images/Beatport_Logo_Mark.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+
+  .spotify img {
+    margin: 0 auto;
+    max-width: 50%;
+    position: relative;
+    top: 40%;
+    transform: translateY(-35%);
+  }
+
+  .fa-spotify {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;

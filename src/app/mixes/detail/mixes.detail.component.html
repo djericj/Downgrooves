@@ -1,40 +1,51 @@
 <div *ngIf="mix">
-  <div class="row" style="padding-bottom: 30px;">
+  <div class="row" style="padding-bottom: 30px">
     <div class="col-md-4 text-right">
-
-      <img src="../../../assets/images/mixes/{{ mix.attachment }}" class="cover img-responsive img-thumbnail m-b-lg" alt="{{ mix.name }}">
-      <h4 class="album-title hidden-lg">{{mix.Name}}</h4>
+      <img
+        src="../../../assets/images/mixes/{{ mix.attachment }}"
+        class="cover img-responsive img-thumbnail m-b-lg"
+        alt="{{ mix.name }}"
+      />
+      <h4 class="album-title hidden-lg">{{ mix.Name }}</h4>
       <h4 class="m-b-lg mixed-by">
         <span class="h3">mixed by </span>
-        <a [routerLink]="['/about']">{{mix.artist}}</a>
+        <a [routerLink]="['/about']">{{ mix.artist }}</a>
       </h4>
-      <p style="padding: 20px 0;">
-        <button (click)="playMix()" class="btn" target="_new" style="margin: 0 0 0 10px;"><i class="fa fa-headphones"></i>
-          Listen</button>
-        <button (click)="downloadMix()" class="btn m-b-lg hidden-xs hidden-sm" target="_new" style="margin: 0 0 0 10px;"><i
-            class="fa fa-download"></i>
-          Download</button>
+      <p style="padding: 20px 0">
+        <button
+          (click)="playMix()"
+          class="btn"
+          target="_new"
+          style="margin: 0 0 0 10px"
+        >
+          <i class="fa fa-headphones"></i> Listen
+        </button>
+        <button
+          (click)="downloadMix()"
+          class="btn m-b-lg hidden-xs hidden-sm"
+          target="_new"
+          style="margin: 0 0 0 10px"
+        >
+          <i class="fa fa-download"></i> Download
+        </button>
       </p>
 
-
       <h3>{{ mix.CreateDate }}</h3>
-      <br/>
-
-
+      <br />
     </div>
     <div class="col-md-8">
       <div class="row">
         <div class="col-md-9 col-xs-12">
           <div class="hover-text">
-            <h1 class="pull-left hidden-xs hidden-sm" style="padding-left: 10px;">
-              <strong>{{mix.Name}}</strong>
+            <h1
+              class="pull-left hidden-xs hidden-sm"
+              style="padding-left: 10px"
+            >
+              <strong>{{ mix.Name }}</strong>
             </h1>
-
           </div>
         </div>
-        <div class="col-md-3 col-xs-12">
-
-        </div>
+        <div class="col-md-3 col-xs-12"></div>
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -50,7 +61,7 @@
                 <td class="hover-text">
                   <strong>{{ t.title }} </strong>
                   <span *ngIf="t.Remix">({{ t.Remix }})</span>
-                  <br/>
+                  <br />
                   <p class="small hover-text">{{ t.artist }}</p>
                 </td>
                 <td>
@@ -63,14 +74,13 @@
           </table>
         </div>
       </div>
-
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <a [routerLink]="['/mixes/' + mix.Category.toLowerCase()]" class="back-button">&lt;--back</a>
+        <a [routerLink]="['/mixes']" class="back-button">&lt;--back</a>
       </div>
     </div>
-    <br/>
-    <br/>
+    <br />
+    <br />
   </div>
 </div>

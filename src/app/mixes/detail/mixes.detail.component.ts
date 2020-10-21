@@ -30,14 +30,14 @@ export class MixesDetailComponent extends BaseComponent implements OnInit {
 
   playMix() {
     //console.log(this.mix);
-    let t = this._playerService.mixToPlayerTrack(this.mix);
+    const t = this._playerService.mixToPlayerTrack(this.mix);
     this._playerService.play(t);
   }
   downloadMix() {}
 
   getDetail() {
     this._route.params.subscribe(params => {
-      let name = params["name"];
+      const name = params["name"];
       this._mixesService.getMix(name).subscribe(data => {
         this.mix = data;
         this.mix.CreateDate = moment_(this.mix.CreateDate).format("MMM YYYY");

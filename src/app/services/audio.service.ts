@@ -27,8 +27,8 @@ export class AudioService {
   }
 
   private calculateTime = evt => {
-    let currentTime = this.audio.currentTime;
-    let trackDuration = this.audio.duration;
+    const currentTime = this.audio.currentTime;
+    const trackDuration = this.audio.duration;
     this.setTimeElapsed(currentTime);
     this.setPercentElapsed(trackDuration, currentTime);
     this.setTimeRemaining(trackDuration, currentTime);
@@ -36,12 +36,12 @@ export class AudioService {
 
   private calculatePercentLoaded = evt => {
     if (this.audio.duration > 0) {
-      for (var i = 0; i < this.audio.buffered.length; i++) {
+      for (let i = 0; i < this.audio.buffered.length; i++) {
         if (
           this.audio.buffered.start(this.audio.buffered.length - 1 - i) <
           this.audio.currentTime
         ) {
-          let percent =
+          const percent =
             (this.audio.buffered.end(this.audio.buffered.length - 1 - i) /
               this.audio.duration) *
             100;
@@ -121,7 +121,7 @@ export class AudioService {
    * @param ct
    */
   private setTimeElapsed(ct: number): void {
-    let seconds = Math.floor(ct % 60),
+    const seconds = Math.floor(ct % 60),
       displaySecs = seconds < 10 ? "0" + seconds : seconds,
       minutes = Math.floor((ct / 60) % 60),
       displayMins = minutes < 10 ? "0" + minutes : minutes;
@@ -137,7 +137,7 @@ export class AudioService {
    */
   private setTimeRemaining(d: number, t: number): void {
     let remaining;
-    let timeLeft = d - t,
+    const timeLeft = d - t,
       seconds = Math.floor(timeLeft % 60) || 0,
       remainingSeconds = seconds < 10 ? "0" + seconds : seconds,
       minutes = Math.floor((timeLeft / 60) % 60) || 0,

@@ -15,8 +15,8 @@ export class ITunesService {
   public error: boolean;
   public errorMessage: string;
 
-  apiRoot: string = "https://itunes.apple.com/search";
-  lookupRoot: string = "https://itunes.apple.com/lookup";
+  apiRoot = "https://itunes.apple.com/search";
+  lookupRoot = "https://itunes.apple.com/lookup";
   constructor(private http: HttpClient) {}
 
   callback() {}
@@ -34,8 +34,12 @@ export class ITunesService {
     return this.getJson().map(
       data => {
         return _.uniqBy(data as ITunesTrack[], uniqBy).sort((l, r): number => {
-          if (l.releaseDate > r.releaseDate) return -1;
-          if (l.releaseDate < r.releaseDate) return 1;
+          if (l.releaseDate > r.releaseDate) {
+            return -1;
+          }
+          if (l.releaseDate < r.releaseDate) {
+            return 1;
+          }
           return 0;
         });
       },
@@ -66,7 +70,7 @@ export class ITunesService {
   }
 
   getAlbum(id: string) {
-    let lookupUrl = `${this.lookupRoot}?id=${id}&entity=song`;
+    const lookupUrl = `${this.lookupRoot}?id=${id}&entity=song`;
     return this.http.get<ITunesLookupResult>(lookupUrl);
   }
 }

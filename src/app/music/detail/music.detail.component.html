@@ -1,32 +1,35 @@
 <div *ngIf="album">
   <div class="row" style="padding-bottom: 30px;">
     <div class="col-md-4 text-right album-info">
-
-      <img src="{{ album.artworkUrl100 | enlargeImage }}" class="cover img-responsive img-thumbnail m-b-lg" alt="{{ album.name }}">
-      <h4 class="album-title hidden-lg">{{album.collectionName}}</h4>
+      <img
+        src="{{ album.artworkUrl100 | enlargeImage }}"
+        class="cover img-responsive img-thumbnail m-b-lg"
+        alt="{{ album.name }}"
+      />
+      <h4 class="album-title hidden-lg">{{ album.collectionName }}</h4>
       <h4 class="m-b-lg" style="line-height: 44px;">
         <span class="h3">by </span>
-        <a href="{{album.artistViewUrl}}">{{album.artistName}}</a>
+        <a href="{{ album.artistViewUrl }}">{{ album.artistName }}</a>
       </h4>
 
       <p style="padding: 10px 0;">
-        <button class="btn" (click)="buy(album.collectionViewUrl);" target="_new"><i class="fa fa-shopping-cart"></i>
-          Buy
-          on iTunes</button>
+        <button
+          class="btn"
+          (click)="buy(album.collectionViewUrl)"
+          target="_new"
+          data-cy="itunes-button"
+        >
+          <i class="fa fa-shopping-cart"></i> Buy on iTunes
+        </button>
       </p>
 
       <h3>{{ formattedReleaseDate }}</h3>
-
-
-
     </div>
     <div class="col-md-8">
       <div class="hover-text">
         <h1 class="hidden-xs hidden-sm">
-          <strong>{{album.collectionName}}</strong>
+          <strong>{{ album.collectionName }}</strong>
         </h1>
-
-
       </div>
       <div class="row">
         <div class="col-xs-12">

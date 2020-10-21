@@ -3,7 +3,7 @@ import { Title } from "@angular/platform-browser";
 
 @Injectable()
 export abstract class BaseComponent implements OnInit {
-  public _siteTitle: string = "Downgrooves Electronic Music";
+  public _siteTitle = "Downgrooves Electronic Music";
   constructor() {}
 
   ngOnInit() {}

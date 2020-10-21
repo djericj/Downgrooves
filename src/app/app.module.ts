@@ -36,7 +36,8 @@ import { EnlargeImagePipe } from "./pipes/enlarge-image.pipe";
 import { UrlFormatPipe } from "./pipes/url-format.pipe";
 import { RemoveUrlsPipe } from "./pipes/remove-urls.pipe";
 import { FormatTrackTimePipe } from "./pipes/format-time.pipe";
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from "./footer/footer.component";
+import { ModularComponent } from './modular/modular.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { FooterComponent } from './footer/footer.component';
     LoadingComponent,
     RemixesComponent,
     FriendsComponent,
-    FooterComponent
+    FooterComponent,
+    ModularComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpClientJsonpModule,
     HttpModule,
     JsonpModule,
-    IsotopeModule
+    IsotopeModule,
   ],
   providers: [
     ITunesService,
@@ -79,8 +81,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserService,
     FacebookService,
     LayoutService,
-    PlayerService
+    PlayerService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -11,7 +11,7 @@ import { LayoutService } from "../services/layout.service";
 export class HeaderComponent implements OnInit {
   status: string;
   track: any;
-  show: boolean = false;
+  show = false;
 
   constructor(
     private router: Router,
