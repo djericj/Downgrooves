@@ -26,6 +26,11 @@ export class MixesComponent extends BaseComponent implements OnInit {
   ) {
     super();
   }
+  public isoOptions: IsotopeOptions = {
+    percentPosition: true,
+    itemSelector: ".grid-item",
+  };
+
   ngOnInit() {
     this._route.params.subscribe((params) => {
       // this.category = params["category"];

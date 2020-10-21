@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ModularService } from "../services/modular.service";
 import { Observable } from "rxjs";
+import { IsotopeOptions } from "ngx-isotope";
 
 @Component({
   selector: "app-modular",
@@ -10,7 +11,10 @@ import { Observable } from "rxjs";
 export class ModularComponent implements OnInit {
   public videos;
   constructor(private _modularService: ModularService) {}
-
+  public isoOptions: IsotopeOptions = {
+    percentPosition: true,
+    itemSelector: ".grid-item",
+  };
   ngOnInit() {
     this.getData();
   }
